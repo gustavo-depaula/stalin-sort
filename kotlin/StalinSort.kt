@@ -17,14 +17,11 @@ fun main(args: Array<String>) {
 }
 
 inline fun <reified T> Iterable<Comparable<T>>.sortComrades(): List<T> = foldIndexed(mutableListOf<T>()) { index, sortedComrades, comrade ->
-    if (index > 0) {
-        if (comrade > sortedComrades.last())
-            sortedComrades += comrade as T
-    } else {
-        sortedComrades += comrade as T
-    }
-                                                               
-    sortedComrades
+    sortedComrades.apply {
+        if (index == 0 || comrade > last()) {
+            add(comrade as T)
+        }
+    }                                                                                                      
 }
 
 enum class RedArmyRank {
