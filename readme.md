@@ -1,5 +1,5 @@
 # Welcome to  the Hacktoberfest 2018 Stalin Sort :clipboard:
-Stalin Sort in any language you like! What is Stalin ort?
+Stalin Sort in any language you like! What is Stalin Sort?
 ![poster](stalin-sort.jpeg)
 
 # What is Hacktoberfest?
