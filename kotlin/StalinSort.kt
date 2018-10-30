@@ -16,15 +16,12 @@ fun main(args: Array<String>) {
     println("$intComrades\n$charComrades\n$redArmyRanks\n$dickwads")
 }
 
-inline fun <reified T> Iterable<Comparable<T>>.sortComrades(): List<T> = foldIndexed(mutableListOf<T>()) { index, sortedComrades, comrade ->
-    if (index > 0) {
-        if (comrade > sortedComrades.last())
-            sortedComrades += comrade as T
-    } else {
-        sortedComrades += comrade as T
-    }
-                                                               
-    sortedComrades
+fun <T: Comparable<T>> Iterable<T>.sortComrades(): List<T> = foldIndexed(mutableListOf<T>()) { index, sortedComrades, comrade ->
+    sortedComrades.apply {
+        if (index == 0 || comrade > last()) {
+            add(comrade)
+        }
+    }                                                                                                      
 }
 
 enum class RedArmyRank {
