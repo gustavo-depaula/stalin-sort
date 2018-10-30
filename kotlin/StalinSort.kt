@@ -1,5 +1,5 @@
 fun main(args: Array<String>) {
-	val intComrades = listOf(0, 2, 1, 4, 3, 6, 5).sortComrades()
+    val intComrades = listOf(0, 2, 1, 4, 3, 6, 5).sortComrades()
     
     val charComrades = listOf('A', 'C', 'B', 'E', 'D').sortComrades()
 
@@ -24,7 +24,7 @@ inline fun <reified T> Iterable<Comparable<T>>.sortComrades(): List<T> = foldInd
         sortedComrades += comrade as T
     }
                                                                
-	sortedComrades
+    sortedComrades
 }
 
 enum class RedArmyRank {
