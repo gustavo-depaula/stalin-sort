@@ -19,7 +19,7 @@ fun main(args: Array<String>) {
 fun <T: Comparable<T>> Iterable<T>.sortComrades(): List<T> = foldIndexed(mutableListOf<T>()) { index, sortedComrades, comrade ->
     sortedComrades.apply {
         if (index == 0 || comrade > last()) {
-            add(comrade as T)
+            add(comrade)
         }
     }                                                                                                      
 }
