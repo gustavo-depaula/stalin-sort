@@ -1,5 +1,6 @@
 # Welcome to  the Hacktoberfest 2018 Stalin Sort :clipboard:
-Stalin Sort in any language you like!
+Stalin Sort in any language you like! What is Stalin ort?
+![poster](stalin-sort.jpeg)
 
 # What is Hacktoberfest?
 Hacktoberfest is a program organised by Digital Ocean and Github, where you can easily win a T-Shirt just by making 5 pull requests in the month of October to any open source projects on Github.
