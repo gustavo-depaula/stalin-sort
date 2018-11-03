@@ -1,44 +1,33 @@
-﻿using System;
+using System;
+using System.Linq;
+using System.Collections.Generic;
+
 
 namespace stalin_sort
 {
     class Program
     {
-        static int[] stalin_sort(int[] array)
+        static private int[] stalinSort(int[] array)
         {
-            int position = 1;
-            int counter = 0;
+        	if (array.Length == 0) return array;//empty array is already sorted. yay!
+        	
+            var sortedArray = new List<int>() { array[0] }; //resulting array always contains the first element
             
-            for (int i = 0; i < array.Length - 1; i++)
+            for (int i = 1; i < array.Length; i++)
             {
-                if (array[i + 1] >= array[i]) counter++;
+                if (array[i] >= sortedArray.Last()) 
+                	sortedArray.Add(array[i]);
             }
             
-            int[] sortedArray = new int[counter];
-            sortedArray[0] = array[0];
-            
-            
-            for (int i = 1; i < array.Length; ++i)
-            {
-                if (array[i] >= sortedArray[position - 1])
-                {
-                    sortedArray[position] = array[i];
-                    position++;
-                }
-            }
-
-            return sortedArray;
+            return sortedArray.ToArray();
         } 
         static void Main(string[] args)
         {
             int[] array = new int[]{1, 2, 4, 3, 6, 8, 0, 9, 5, 7};
-            int[] sortedArray = stalin_sort(array);
             
-            for (int i = 0; i < sortedArray.Length; i++)
-            {
-                if (i == sortedArray.Length - 1) Console.WriteLine("{0}", sortedArray[i]);
-                else Console.Write("{0}, ", sortedArray[i]);
-            }
+            int[] sortedArray = stalinSort(array);
+            
+            Console.WriteLine("{0}", string.Join(", ", sortedArray));
         }
     }
 }
