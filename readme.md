@@ -1,14 +1,16 @@
-# Welcome to  the Hacktoberfest 2018 Stalin Sort :clipboard:
+# Welcome to the Stalin Sort Repo :clipboard:
 Stalin Sort in any language you like! What is Stalin Sort?
 ![poster](stalin-sort.jpeg)
 
 # What is Hacktoberfest?
+> Stalin sort began first as a Hacktoberfest 2018 repo
+
 Hacktoberfest is a program organised by Digital Ocean and Github, where you can easily win a T-Shirt just by making 5 pull requests in the month of October to any open source projects on Github.
 
 ## Steps to follow :scroll:
 
-### 1. Register for Hacktoberfest
-You can register from [here](https://hacktoberfest.digitalocean.com).
+### ~1. Register for Hacktoberfest~
+~You can register from [here](https://hacktoberfest.digitalocean.com).~
 
 ### 2. Fork it :fork_and_knife:
 
