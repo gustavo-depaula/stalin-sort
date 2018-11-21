@@ -1,10 +1,11 @@
 def stalin_sort(arr)
-  [] if arr.empty?
+  return [] if arr.empty?
 
   max = arr[0]
-  arr.select.with_index do |x,i| 
-    max = x if i == 0 or x > max
-    x >= max
+  arr.select do |x|
+    next if max > x
+    max = x
+    x
   end
 end
 
