@@ -5,8 +5,7 @@ class StalinSort{
 
         for (index in 1...array.length){
             if (array[index] >= maxValue){
-                sortedArray.push(array[index]);
-                maxValue = array[index];
+                sortedArray.push(maxValue = array[index]);
             }
         }
         return sortedArray;
