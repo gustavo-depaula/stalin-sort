@@ -12,5 +12,4 @@ function stalinSort(array) {
   });
 }
 
-stalinSort(1);
 module.exports = stalinSort
