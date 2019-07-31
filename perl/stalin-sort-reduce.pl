@@ -2,7 +2,7 @@ use strict;
 use List::Util qw(reduce);
 
 sub stalin_sort {
-    reduce { push @$a, $b unless @$a && $a->[-1] > $b; $a } [], @_;
+    reduce { push @$a, $b if !@$a or $a->[-1] < $b; $a } [], @_;
 }
 
 my @arr1 = (1, 2, 4, 3, 6, 8, 0, 9, 5, 7);
