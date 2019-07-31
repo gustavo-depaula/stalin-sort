@@ -1,8 +1,10 @@
 (defun stalin-sort (list)
-  (unless (null list)
-    (cons (car list)
-	  (loop for (a b) on list while b
-	     when (>= b a) collect b))))
+  (let ((first (car list))
+	(rest  (cdr list)))
+    (cond ((null rest) list)
+	  ((>= first (car rest))
+	   (stalin-sort (cons first (cdr rest))))
+	  (t (cons first (stalin-sort rest))))))
 
 (defun run-tests ()
   "Runs test cases, copied from the Perl example."
