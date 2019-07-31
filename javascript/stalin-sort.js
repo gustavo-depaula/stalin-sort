@@ -1,5 +1,5 @@
 function stalinSort(array) {
-  if (!Array.isArray(array)) throw new TypeError('Arg[0] must be an Array!');
+  if (!Array.isArray(array)) throw new TypeError('Argument must be an Array!');
 
   let [holder] = array;
   return array.filter((el, i) => {
