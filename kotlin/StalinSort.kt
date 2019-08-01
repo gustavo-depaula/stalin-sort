@@ -16,12 +16,16 @@ fun main(args: Array<String>) {
     println("$intComrades\n$charComrades\n$redArmyRanks\n$dickwads")
 }
 
-fun <T: Comparable<T>> Iterable<T>.sortComrades(): List<T> = foldIndexed(mutableListOf<T>()) { index, sortedComrades, comrade ->
-    sortedComrades.apply {
-        if (index == 0 || comrade > last()) {
-            add(comrade)
+fun <T: Comparable<T>> Iterable<T>.sortComrades(): List<T> {
+    var max = firstOrNull() ?: return emptyList()
+    return mapIndexedNotNull { index, comrade ->
+        if (index == 0 || comrade > max) {
+            max = comrade
+            comrade
+        } else {
+            null
         }
-    }                                                                                                      
+    }
 }
 
 enum class RedArmyRank {
