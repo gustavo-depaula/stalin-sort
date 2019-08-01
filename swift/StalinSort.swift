@@ -7,7 +7,7 @@ extension Sequence where Element: Comparable {
         where C: RangeReplaceableCollection, C: RandomAccessCollection,
         C.Element == Element {
         return reduce(into: initialResult, { (result, element) in
-            if result.last.map({ $0 < element }) ?? true {
+            if result.last.map({ $0 <= element }) ?? true {
                 result.append(element)
             }
         })
