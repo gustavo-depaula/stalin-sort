@@ -16,11 +16,11 @@ public class Program
 	{
 		if (items.Any()) {
 			var comparer = Comparer<T>.Default;
-  			T last = items.First();
-			foreach (var i in items)
-				if (comparer.Compare(i, last) >= 0) {
-					last = i;
-					yield return i;
+  			T previousValue = items.First();
+			foreach (var currentValue in items)
+				if (comparer.Compare(currentValue, previousValue) >= 0) {
+					previousValue = currentValue;
+					yield return currentValue;
 				}
 		}
 	}
