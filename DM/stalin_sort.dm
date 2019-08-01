@@ -1,27 +1,31 @@
 /proc/stalin_sort(list/L, compare=/proc/default_compare)
-    for (var/i = 1; i < L.len; i++)
-        var/a = L[i]
-        var/b = L[i+1]
+    if (L.len == 0)
+        return list()
 
-        var/cmp = call(compare)(a, b)
-        if (cmp > 0)
-            L.Cut(i+1, i+2)
-            i--;
+    var/list/out = list()
+
+    var/highest = L[1]
+    for (var/element in L)
+        var/cmp = call(compare)(highest, element)
+        if (cmp <= 0)
+            highest = element;
+            out[++out.len] = element;
+
+    return out
 
 
 /proc/default_compare(a, b)
     if (a > b)
         return 1
-    
+
     if (a < b)
         return -1
-    
+
     return 0
 
 
 /proc/main()
-    var/list/L = list(1, 3, 2, 5, 3, 10, 6, 5)
-    stalin_sort(L)
+    var/list/L = stalin_sort(list(1, 3, 3, 3, 2, 2, 2, 5, 3, 10, 6, 5))
     world.log << json_encode(L)
 
 
