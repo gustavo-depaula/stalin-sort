@@ -9,9 +9,7 @@ Stalin Sort in any language you like! What is Stalin Sort?
 
 ## Want to help? :star:
 
-We're accepiting help from anyone! This repo is collaborative, so if you want to add a solution in a new language (check Wikipedia [Programming Language
-
-List](https://en.wikipedia.org/wiki/List_of_programming_languages)) or just improve some code that you think that can be improved, follow this steps:
+We're accepiting help from anyone! This repo is collaborative, so if you want to add a solution in a new language (check Wikipedia [Programming Language List](https://en.wikipedia.org/wiki/List_of_programming_languages)) or just improve some code that you think that can be improved, follow this steps:
 
   
 
