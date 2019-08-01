@@ -1,12 +1,5 @@
 def sort(l):
-    max_val = l[0]
-
-    def add_val(num):
-        nonlocal max_val
-        max_val = num
-        return num
-
-    return [add_val(x) for x in l if x >= max_val]
+    return [x for max_val in l[:1] for x in l if x >= max_val for max_val in (x,)]
 
 
 ordered_list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
