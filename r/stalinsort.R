@@ -43,6 +43,9 @@ stalin.sort <- function(x, decreasing=FALSE, verbose=TRUE) {
       x[i] <- NaN
     }
   }
+  if (verbose) {
+    print("A result stronk as Stalinium.")
+  }
   return(x[!is.nan(x)])
 }
 
