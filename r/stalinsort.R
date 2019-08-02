@@ -26,11 +26,11 @@ stalin.sort <- function(x, decreasing=FALSE, verbose=TRUE) {
   x.cmp <- x[1]
   if (decreasing) {
     cmp <- function(a, b) {
-      return(a >= b)
+      return(a <= b)
     }
   } else {
     cmp <- function(a, b) {
-      return(a <= b)
+      return(a >= b)
     }
   }
   for (i in 1:length(x)) {
@@ -45,3 +45,11 @@ stalin.sort <- function(x, decreasing=FALSE, verbose=TRUE) {
   }
   return(x[!is.nan(x)])
 }
+
+require(testthat)
+x <- c(1, 5, 3, 5, 7)
+testthat::expect_equal(stalin.sort(x, decreasing=TRUE, verbose=FALSE), c(1, 5, 5, 7))
+testthat::expect_equal(stalin.sort(x, decreasing=TRUE, verbose=FALSE), c(1))
+x <- c(1, 2, 3, 5, 7)
+testthat::expect_equal(stalin.sort(x, decreasing=FALSE, verbose=FALSE), x)
+testthat::expect_equal(stalin.sort(x, decreasing=TRUE, verbose=FALSE), c(1))
