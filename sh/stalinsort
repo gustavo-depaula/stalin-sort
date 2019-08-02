@@ -1,0 +1,69 @@
+#!/bin/sh
+
+# sorts lines read from stdin and writes to stdout, similarly to sort(1)
+# nb. POSIX / SuS sh, *not* bash, but bash and similar should be compatible
+
+# $1 should be a comparison function implementing less-than-or-equal-to
+# a strictly-less-than function could also be used if desired
+stalinsort() {
+	local lte="$1"
+	local first=y
+	local previous
+	local line
+
+	while read -r line; do
+		if [ $first = y ]; then
+			first=n
+			printf '%s\n' "$line"
+			previous="$line"
+		elif "$lte" "$previous" "$line"; then
+			printf '%s\n' "$line"
+			previous="$line"
+		fi
+	done
+}
+
+# these are purely examples - the main sort function is entirely standard but
+# the comparison functions may cheat a little
+
+# numeric <=
+numeric() {
+	test "$1" -le "$2"
+}
+
+# string (ASCII byte value) <=
+string() {
+	# test < is cheating slightly as it's not in
+	# the standard but is in ksh, dash, etc.
+	test "$1" = "$2" || test "$1" \< "$2"
+}
+
+# string by default as numeric is noisy if the input isn't clean
+comparator=string
+
+usage() {
+	printf '%s: [numeric|string]\n' "$0" >&2
+}
+
+if [ $# -gt 1 ]; then
+	usage
+	exit 1
+fi
+
+if [ $# -eq 1 ]; then
+	case "$1" in
+		numeric|string)
+			comparator="$1"
+			;;
+		-h)
+			usage
+			exit 0
+			;;
+		*)
+			usage
+			exit 1
+			;;
+	esac
+fi
+
+stalinsort "$comparator"
