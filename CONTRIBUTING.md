@@ -17,7 +17,7 @@ For a PR to be approved and merged please note:
 
 - We allow more than one solution for one language, so if you don't want to modify someone else's code, you can add a new file with your own solution. Have in mind that your solution must be completely unique, if it isn't consider modifying the existing code.
 - We don't allow deletions of others files or code.
-- We don't allow files to be directly added in root directory of project, add them in there language folder
+- We don't allow files to be directly added in root directory of project, add them in their language folder
 - Follow the code specifications!
 
 ### Code specifications
