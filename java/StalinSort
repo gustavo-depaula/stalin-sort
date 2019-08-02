@@ -1,0 +1,41 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+class StalinSort {
+    public static List<Integer> stalinSort(List<Integer> unsorted) {
+        if (unsorted.isEmpty()) {
+            return unsorted;
+        }
+        int maximum = unsorted.get(0);
+        List<Integer> sorted = new ArrayList<>();
+        for (Integer i : unsorted) {
+            if (maximum <= i) {
+                maximum = i;
+                sorted.add(maximum);
+            }
+        }
+        return sorted;
+    }
+
+    public static void main(String[] args) {
+        List<Integer> arr1 = Arrays.asList(1, 2, 4, 3, 6, 8, 0, 9, 5, 7);
+        List<Integer> sorted1 = stalinSort(arr1);
+        List<Integer> arr2 = Arrays.asList(9, 8, 7, 6, 5, 4, 3, 2, 1, 0);
+        List<Integer> sorted2 = stalinSort(arr2);
+        List<Integer> arr3 = Arrays.asList(1, 3, 2, 5, 4, 7, 0, 9, 8, 6);
+        List<Integer> sorted3 = stalinSort(arr3);
+        System.out.print("Original: ");
+        System.out.println(arr1);
+        System.out.print("Sorted: ");
+        System.out.println(sorted1);
+        System.out.print("Original: ");
+        System.out.println(arr2);
+        System.out.print("Sorted: ");
+        System.out.println(sorted2);
+        System.out.print("Original: ");
+        System.out.println(arr3);
+        System.out.print("Sorted: ");
+        System.out.println(sorted3);
+    }
+}
