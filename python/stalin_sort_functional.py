@@ -9,7 +9,7 @@ class State(NamedTuple):
 
 
 def sort_step(acc: State, number: float) -> State:
-    if acc.max_val < number:
+    if acc.max_val <= number:
         ordered_list = acc.ordered_list + [number]
         return State(
             max_val=number,
