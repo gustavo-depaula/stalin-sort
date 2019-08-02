@@ -13,7 +13,7 @@ func Sort(list []int) int {
 	highest := list[0]
 	for i := 1; i < len(list); i++ {
 		next := list[i]
-		if next > highest {
+		if next >= highest {
 			highest = next
 			list[n] = next
 			n++
