@@ -1,0 +1,11 @@
+C:\temp\StalinSort\StalinSort\bin\Debug\StalinSort.exe.config
+C:\temp\StalinSort\StalinSort\bin\Debug\StalinSort.exe
+C:\temp\StalinSort\StalinSort\bin\Debug\StalinSort.pdb
+C:\temp\StalinSort\StalinSort\bin\Debug\StalinSort.xml
+C:\temp\StalinSort\StalinSort\obj\Debug\StalinSort.vbprojAssemblyReference.cache
+C:\temp\StalinSort\StalinSort\obj\Debug\StalinSort.Resources.resources
+C:\temp\StalinSort\StalinSort\obj\Debug\StalinSort.vbproj.GenerateResource.cache
+C:\temp\StalinSort\StalinSort\obj\Debug\StalinSort.vbproj.CoreCompileInputs.cache
+C:\temp\StalinSort\StalinSort\obj\Debug\StalinSort.exe
+C:\temp\StalinSort\StalinSort\obj\Debug\StalinSort.xml
+C:\temp\StalinSort\StalinSort\obj\Debug\StalinSort.pdb
