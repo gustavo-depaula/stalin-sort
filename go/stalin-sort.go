@@ -1,8 +1,6 @@
-package main
+package stalinSort
 
-import "fmt"
-
-func StalinSort(arr []int) []int {
+func SortInts(arr []int) []int {
 	sorted := make([]int, 0)
 
 	for i := 0; i < len(arr); i++ {
@@ -14,10 +12,4 @@ func StalinSort(arr []int) []int {
 	}
 
 	return sorted
-}
-
-func main() {
-	arr := []int{1, 2, 10, 3, 2, 4, 15, 6, 30, 20}
-	resp := StalinSort(arr)
-	fmt.Println(resp)
 }
