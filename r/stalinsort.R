@@ -20,7 +20,7 @@ stalin.sort <- function(x, decreasing=FALSE, verbose=TRUE) {
   # decreasing is a logical (TRUE or FALSE), indicating whether
   # the sort is increasing or decreasing
   if (!is.logical(decreasing)) {
-    stop("Type `stalin.sort`, and try again, big guy.")
+    stop("Type `stalin.sort`, and try again, comrade.")
   }
   x <- as.vector(x)
   x.cmp <- x[1]
