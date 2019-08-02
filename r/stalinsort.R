@@ -51,7 +51,7 @@ stalin.sort <- function(x, decreasing=FALSE, verbose=TRUE) {
 
 require(testthat)
 x <- c(1, 5, 3, 5, 7)
-testthat::expect_equal(stalin.sort(x, decreasing=TRUE, verbose=FALSE), c(1, 5, 5, 7))
+testthat::expect_equal(stalin.sort(x, decreasing=FALSE, verbose=FALSE), c(1, 5, 5, 7))
 testthat::expect_equal(stalin.sort(x, decreasing=TRUE, verbose=FALSE), c(1))
 x <- c(1, 2, 3, 5, 7)
 testthat::expect_equal(stalin.sort(x, decreasing=FALSE, verbose=FALSE), x)
