@@ -1,35 +1,40 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int *stalinSort(int *arr, int size, int *newSize) {
+/*
+ * sort array 'arr' of size 'size'.
+ * result is in 'arr' itself.
+ *
+ * Dynamic memory does not make a O(n), 
+ *   so this is real O(n)
+ *
+ * */
+int stalinSort( int *arr, int size )
+{
     int i;
-    int *sortedArr;
+    int j;
 
-    sortedArr = (int*) malloc(sizeof(int));
-    sortedArr[0] = arr[0];
-
-    for (i = 1; i < size; ++i) {
-        if (arr[i] >= sortedArr[(*newSize)-1]) {
-            ++(*(newSize));
-            sortedArr = (int*) realloc(sortedArr, *newSize * sizeof(int));
-            sortedArr[*newSize-1] = arr[i];
+    for (i = 1, j = 0; i < size; ++i) {
+        if( arr[i] >= arr[j] )	{
+            ++j;
+            arr[j] = arr[i];
         }
     }
-    return sortedArr;
+
+    /* returns new size */
+    return j + 1;
 }
 
 int main(int argc, char const *argv[]) {
-    int i, newSize = 1;
-    int *sortedArr;
+    int i, newSize;
     int array[10] = {1, 2, 4, 3, 6, 8, 0, 9, 5, 7};
-    
-    sortedArr = stalinSort(array, 10, &newSize);
+   
+    newSize = stalinSort(array, 10);
 
     for (i = 0; i < newSize; ++i)
-        (void) printf("%i ", sortedArr[i]);
+        (void) printf("%i ", array[i]);
 
     (void) printf("\n");
 
-    free(sortedArr);
     return 0;
 }
