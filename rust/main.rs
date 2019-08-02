@@ -4,7 +4,7 @@ fn main() {
     let mut last = unsorted_data[0];
 
     for &x in unsorted_data.iter() {
-        if x > last {
+        if x >= last {
             sorted_data.push(x);
             last = x;
         }
