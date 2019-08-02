@@ -1,4 +1,4 @@
-const stalinSort = (arr: number[]) => {
+export function stalinSort(arr: number[]): number[] {
   let temp = arr[0] - 1;
   return arr.filter(el => {
     if (temp < el) {
@@ -7,6 +7,4 @@ const stalinSort = (arr: number[]) => {
     }
     return false;
   });
-};
-
-export default stalinSort;
+}
