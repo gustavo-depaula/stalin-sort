@@ -19,7 +19,7 @@ begin
   Result := [iTarget[0]];
 
   for var i := 1 to H do
-    if Result[High(Result)] < iTarget[i] then
+    if Result[High(Result)] <= iTarget[i] then
       Result := Result + [iTarget[i]];
 end;
 
