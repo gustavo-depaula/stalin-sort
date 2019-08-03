@@ -21,3 +21,4 @@ if __name__ == "__main__":
     for _ in range(100):
         random.shuffle(mixed)
         assert next(ss_listcomp) == sort(mixed)
+    print("all tests passed")
