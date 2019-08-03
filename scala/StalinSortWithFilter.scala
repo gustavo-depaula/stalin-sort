@@ -1,7 +1,7 @@
 import scala.math.BigDecimal.RoundingMode
 import scala.util.Random
 
-object Stalin extends App {
+object StalinSortWithFilter extends App {
 
   def stalinSort[B](list: List[B])(implicit cmp: Ordering[B]): List[B] = {
     list match {
