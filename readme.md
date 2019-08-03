@@ -3,7 +3,7 @@
 
 ![poster](stalin-sort.jpeg)
 
-## What is Stalin Sort?
+## What is Stalin Sort? :question:
 
 ### Introduction
 
@@ -43,9 +43,11 @@ FUNCTION stalinSort(A : list OF sortable items)
 END FUNCTION
 ```
 
-## Want to help? :star:
+## Want to help? :raised_hands:
 
 Please check the [CONTRIBUTING.md](./CONTRIBUTING.md)
+
+### Give this Project a Star! :star:
 
 ## About
 
