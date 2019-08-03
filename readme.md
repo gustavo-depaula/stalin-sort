@@ -1,6 +1,8 @@
 
 # Welcome to the Stalin Sort Repo :clipboard:
 
+![poster](stalin-sort.jpeg)
+
 ## What is Stalin Sort?
 
 ### Introduction
@@ -21,6 +23,8 @@ It's simple, all you need to do is iterate through the array checking if its ele
 6. **(1 2 5 5 7)** Ordered array!
 
 ### Pseudocode implementation
+
+Have in mind that this pseudocode is just an example, we strongly encourage you to code a different approach. 
 
 ```
 FUNCTION stalinSort(A : list OF sortable items)
@@ -46,7 +50,5 @@ Please check the [CONTRIBUTING.md](./CONTRIBUTING.md)
 ## About
 
 > Stalin sort began first as a Hacktoberfest 2018 repo
-
-![poster](stalin-sort.jpeg)
 
 Hacktoberfest is a program organised by Digital Ocean and Github, where you can easily win a T-Shirt just by making 5 pull requests in the month of October to any open source projects on Github.
