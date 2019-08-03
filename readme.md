@@ -41,7 +41,7 @@ END FUNCTION
 
 ## Want to help? :star:
 
-Pleas check the [CONTRIBUTING.md](./CONTRIBUTING.md)
+Please check the [CONTRIBUTING.md](./CONTRIBUTING.md)
 
 ## About
 
