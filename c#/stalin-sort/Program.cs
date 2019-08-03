@@ -1,33 +1,28 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
-
-
-namespace stalin_sort
+					
+public class Program
 {
-    class Program
-    {
-        static private int[] stalinSort(int[] array)
-        {
-        	if (array.Length == 0) return array;//empty array is already sorted. yay!
-        	
-            var sortedArray = new List<int>() { array[0] }; //resulting array always contains the first element
-            
-            for (int i = 1; i < array.Length; i++)
-            {
-                if (array[i] >= sortedArray.Last()) 
-                	sortedArray.Add(array[i]);
-            }
-            
-            return sortedArray.ToArray();
-        } 
-        static void Main(string[] args)
-        {
-            int[] array = new int[]{1, 2, 4, 3, 6, 8, 0, 9, 5, 7};
-            
-            int[] sortedArray = stalinSort(array);
-            
-            Console.WriteLine("{0}", string.Join(", ", sortedArray));
-        }
-    }
+	public static void Main()
+	{
+		var array = new int[]{ 1, 2, 4, 3, 6, 8, 0, 8, 9, 5, 7};
+		
+		Console.WriteLine("{0}", string.Join(", ", StalinSort(array)));
+	}
+	
+	public static IEnumerable<T> StalinSort<T>(IEnumerable<T> items) 
+		where T: IComparable<T> 
+	{
+		if (items.Any()) {
+			var comparer = Comparer<T>.Default;
+  			T previousValue = items.First();
+			foreach (var currentValue in items) {
+				if (comparer.Compare(currentValue, previousValue) >= 0) {
+					previousValue = currentValue;
+					yield return currentValue;
+				}
+			}
+		}
+	}
 }
