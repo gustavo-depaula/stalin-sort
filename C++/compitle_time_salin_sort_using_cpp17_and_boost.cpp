@@ -11,28 +11,23 @@ inline constexpr auto make_tuple_helper(std::index_sequence<i...>) noexcept
     return hana::make_tuple(hana::arg<i>(args...)...);
 }
 
-template <auto itr, auto end, auto ... args, auto ... result_index>
-inline constexpr decltype(auto) stalin_impl(const std::index_sequence<result_index...>& seq) noexcept
-{
-    if constexpr (itr + 1 == end)
-        if constexpr (hana::arg<itr>(args...) > hana::arg<end>(args...))
-            return seq;
-        else 
-            return std::index_sequence<result_index..., end>{};
-
+template <auto itr, auto end, auto ... args, auto ... result_indexes>
+inline constexpr decltype(auto) stalin_impl(std::index_sequence<result_indexes...>) noexcept
+{   
+    if constexpr (sizeof...(args) == 0) return std::index_sequence<>{};
+    
+    else if constexpr (itr == end) return std::index_sequence<result_indexes...>{};
+    
     else if constexpr (hana::arg<itr>(args...) > hana::arg<itr + 1>(args...))
-        return stalin_impl<itr + 1, end, args...>(seq);
-
-    else
-        return stalin_impl<itr + 1, end, args...>(std::index_sequence<result_index..., itr + 1>{});
+        return stalin_impl<itr + 1, end, args...>(std::index_sequence<result_indexes...>{});
+    
+    else return stalin_impl<itr + 1, end, args...>(std::index_sequence<result_indexes..., itr + 1>{});
 }
 
 template <auto ... args>
 inline constexpr auto stalin_sort() noexcept
 {
-    if constexpr (sizeof...(args) == 0 or sizeof...(args) == 1) 
-        return hana::make_tuple(args...);
-    else return make_tuple_helper<args...>(stalin_impl<1, sizeof...(args), args...>(std::index_sequence<1>{}));
+    return make_tuple_helper<args...>(stalin_impl<1, sizeof...(args), args...>(std::index_sequence<1>{}));
 }
 
 auto main() -> int
