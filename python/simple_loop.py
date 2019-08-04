@@ -1,5 +1,7 @@
 def sort(xs):
-  max_val=float('-inf')
+  if len(xs) < 1:
+    return xs
+  max_val=xs[0]
   result = []
   for x in xs:
     if x >= max_val:
@@ -9,6 +11,7 @@ def sort(xs):
 
 
 from test_utils import test_all
-from benchmark import benchmark, benchmark_length
+from benchmark import benchmark
 
 test_all(sort)
+benchmark(sort)
