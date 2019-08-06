@@ -1,4 +1,4 @@
-module stalinsort2 (stalinSort) where
+module stalinsort_general (stalinSort) where
 
 stalinSort :: (Monoid (t a), Foldable t, Applicative t, Ord a) => t a -> t a
 stalinSort = 
