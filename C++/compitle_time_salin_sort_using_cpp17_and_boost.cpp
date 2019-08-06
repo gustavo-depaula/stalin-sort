@@ -3,6 +3,10 @@
 #include <boost/hana/functional/arg.hpp>
 #include <boost/hana/equal.hpp>
 
+// for print result
+#include <iostream>
+#include <boost/hana/for_each.hpp>
+
 namespace hana = boost::hana;
 
 template <auto ... args, auto ... i>
@@ -41,9 +45,13 @@ inline constexpr auto stalin_sort() noexcept
 
 auto main() -> int
 {
-    static_assert(stalin_sort<>() == hana::make_tuple()); // コンパイル時にソート完了！
+    static_assert(stalin_sort<>() == hana::make_tuple()); // sorted at compile time
     static_assert(stalin_sort<0>() == hana::make_tuple(0));
     static_assert(stalin_sort<2,3>() == hana::make_tuple(2, 3));
     static_assert(stalin_sort<2,1,3>() == hana::make_tuple(2, 3));
     static_assert(stalin_sort<2,1,3,3,2,5,6>() == hana::make_tuple(2,3,3,5,6));
+    
+    // print
+    constexpr auto result = stalin_sort<3, 1, 4, 1, 5>();
+    hana::for_each(result, [](const auto& x){ std::cout << x << " "; }); // 3 4 5
 }
