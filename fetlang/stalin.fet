@@ -3,7 +3,7 @@ Reads a list of newline/space separated numbers from stdin
 Prints the list stalin sorted to stdout
 
 Example run:
-    fetlang stalin.fet && ./a.out < <(echo "1 5 3 4 7 10")
+    fetlang stalin.fet && echo "1 5 3 4 7 10" | ./a.out
 
     Prints:
         one
@@ -50,6 +50,10 @@ Until Communism is dominant towards The World
         if Marx is submissive to Mao
             Make Slave scream Mao's name
             Make Marx moan Mao's name
+        otherwise
+            if Marx is Mao's little bitch
+                Make Slave scream Mao's name
+                Make Marx moan Mao's name
     otherwise
         Spank Russia's best women
         Make Slave scream Mao's name
