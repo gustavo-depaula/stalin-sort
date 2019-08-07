@@ -1,0 +1,54 @@
+{
+  "items": [1,2,5,3,5,7],
+  "last_index": {
+    "=-": {
+      "in1": { "=arr.len": { "arr": "=list" } },
+      "in2": 1
+    }
+  },
+  "last_item": {
+    "=arr.at": {
+      "offset": { "=last_index": { "list": "=list" } },
+      "arr": "=list"
+    }
+  },
+  "first_item": {
+    "=arr.at": {
+      "offset": 0,
+      "arr": "=list"
+    }
+  },
+  "loop": {
+    "items_length": { "=arr.len": { "arr": "=items" } },
+    "=if": {
+      "cond": { "=<": { "in1": "=i", "in2": "=items_length" } },
+      "then": {
+        "element2": { "=arr.at": { "offset": "=i", "arr": "=items" } },
+        "new_sorted_items": {
+          "=if": {
+            "cond": { "=<": { "in1": "=element2", "in2": "=previous_item" } },
+            "then": "=sorted_items",
+            "else": { "=arr.append": { "arr": "=sorted_items", "e": "=element2" } }
+          }
+        },
+        "next_index": { "=+": { "in1": "=i", "in2": 1 } },
+        "=loop": {
+          "sorted_items": "=new_sorted_items",
+          "previous_item": { "=last_item": { "list": "=new_sorted_items" } },
+          "i": "=next_index"
+        }
+      },
+      "else": "=sorted_items"
+    }
+  },
+  "=loop": {
+    "sorted_items": {
+      "=arr.append": {
+        "arr": [],
+        "e": { "=first_item": { "list": "=items" } }
+      }
+    },
+    "previous_item": { "=first_item": { "list": "=items" } },
+    "i": 1
+  }
+}
