@@ -1,79 +1,56 @@
 
 # Welcome to the Stalin Sort Repo :clipboard:
 
-Stalin Sort in any language you like! What is Stalin Sort?
-
 ![poster](stalin-sort.jpeg)
 
-  
+## What is Stalin Sort? :question:
 
-## Want to help? :star:
+### Introduction
 
-We're accepiting help from anyone! This repo is collaborative, so if you want to add a solution in a new language (check Wikipedia [Programming Language List](https://en.wikipedia.org/wiki/List_of_programming_languages)) or just improve some code that you think that can be improved, follow this steps:
+Stalin Sort is an efficient sorting algorithm, serving as a systematic method for placing the elements of a random access file or an array in order. Stalin Sort is also know as the best sorting algorithm of all times becasue of it's AMAZING capacity of always ordering an array with an O(n) performance.
 
-  
+### How it works?
 
-### 1. Fork it :fork_and_knife:
+It's simple, all you need to do is iterate through the array checking if its elements are in order, any element that itsn't in order you pull out, in another words, you send it to Gulag.
 
-  
+### Step-by-step example
 
-You can get your own fork/copy of [Stalin Sort](https://github.com/gustavo-depaula/stalin-sort) by using the <a  href="https://github.com/Hacktoberfest-2018/Hello-world/new/master?readme=1#fork-destination-box"><kbd><b>Fork</b></kbd></a> button or clicking [this](https://github.com/gustavo-depaula/stalin-sort/new/master?readme=1#fork-destination-box).
+1. (1 2 5 3 5 7) -> (**1** 2 5 3 5 7) Here the algorithm stores the first of element of the array
+2. (**1** 2 5 3 5 7) -> (1 **2** 5 3 5 7) Now it will compare the stored element with the second one, if this is bigger than the stored, it replaces the stored element by this
+3. (1 **2** 5 3 5 7) -> (1 2 **5** 3 5 7) Repeats step 2nd
+4. (1 2 **5** 3 5 7) -> (1 2 **5** 5 7) How the 4th element is smaller then the 3rd one that is just eliminated
+5. (1 2 **5** 5 7) -> (1 2 5 **5** 7) Equal elements are preserved
+6. **(1 2 5 5 7)** Ordered array!
 
-  
+### Pseudocode implementation
 
-[![Fork Button](https://help.github.com/assets/images/help/repository/fork_button.jpg)](https://github.com/gustavo-depaula/stalin-sort/new/master?readme=1#fork-destination-box)
+Have in mind that this pseudocode is just an example, we strongly encourage you to code a different approach. 
 
-  
+```
+FUNCTION stalinSort(A : list OF sortable items)
+    n := length(A)
+    bigger := 0
+    B SET empty list
 
-### 2. Start coding! :rabbit2:
+    FOR i = 0 TO n NOT inclusive DO
+        IF A[i] >= bigger THEN
+          bigger := A[i]
+          B.push(A[i])
+        END IF
+    END FOR
 
-Once you have forked the repo, add your program in the language folder in
+    RETURN B
+END FUNCTION
+```
 
-main branch, if there is no language folder, make one, then add into it.
+## Want to help? :raised_hands:
 
-  
+Please check the [CONTRIBUTING.md](./CONTRIBUTING.md)
 
-For a PR to be approved and merged please note
-
-- we allow more than one solution for one language, so if you don't want to modify someones code, you can add a new file with your own solution. Have in mind that your solution must be completely unique, if it isn't consider modify the existing code.
-
-- we allow maximum of 5000 additions (your PR will get close if its exceeds, but you can ask maintainer for reviewing this)
-
-- we dont allow deletions of others files or code.
-
-- we dont allow files to be directly added in root directory of project, add them in there language folder
-
-### 3. Ready, Steady, Go... :turtle: :rabbit2:
-
-  
-
-Once you have completed these steps, you are ready to start contributing
-
-by checking our `Help Wanted` issues and creating [pull requests](https://github.com/Hacktoberfest-2018/Hello-world/pulls).
-
-  
-
-### 4. Give this Project a Star :star:
-
-  
-
-If you liked working on this project, please share this project as much
-
-as you can and star this project to help as many people in open source as you can.
-
-  
+### Give this Project a Star! :star:
 
 ## About
 
-  
-
 > Stalin sort began first as a Hacktoberfest 2018 repo
 
-  
-
 Hacktoberfest is a program organised by Digital Ocean and Github, where you can easily win a T-Shirt just by making 5 pull requests in the month of October to any open source projects on Github.
-
-  
-
-:tada: :confetti_ball: :smiley: _**Happy Contributing**_ :smiley: :confetti_ball: :tada:
-
