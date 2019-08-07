@@ -32,7 +32,7 @@ FUNCTION stalinSort(A : list OF sortable items)
     bigger := 0
     B SET empty list
 
-    FOR i = 0 TO n NOT inclusive DO
+    FOR i := 0 TO n NOT inclusive DO
         IF A[i] >= bigger THEN
           bigger := A[i]
           B.push(A[i])
