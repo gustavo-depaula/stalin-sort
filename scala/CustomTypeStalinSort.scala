@@ -32,7 +32,7 @@ object NumericSort {
   }
 }
 
-object CustomStalinSort extends App {
+object CustomTypeStalinSort extends App {
   import StalinSort._
 
 
@@ -66,4 +66,6 @@ object CustomStalinSort extends App {
   }
 
   println(vegetableList.stalinSort)
+
+  println(Seq(1, 3, 3, 5, 4).stalinSort)  //if you run it, the result of is List(1, 3, 5)
 }
