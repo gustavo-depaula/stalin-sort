@@ -1,5 +1,5 @@
 // Author Bill Wood
-// In-place sort, uses pattern matching (inspired by OCaml version)
+// In-place recursive sort using pattern matching (inspired by OCaml version)
 // uses nightly-only feature slice_patterns
 #![feature(slice_patterns)]
 fn main() {
