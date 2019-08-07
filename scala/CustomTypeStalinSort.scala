@@ -16,19 +16,19 @@ object StalinSort {
 
 object NumericSort {
   implicit val intSort: StalinSort[Int] = new StalinSort[Int] {
-    override def canPurge(x: Int, y: Int): Boolean = x >= y
+    override def canPurge(x: Int, y: Int): Boolean = x > y
   }
 
   implicit val longSort: StalinSort[Long] = new StalinSort[Long] {
-    override def canPurge(x: Long, y: Long): Boolean = x >= y
+    override def canPurge(x: Long, y: Long): Boolean = x > y
   }
 
   implicit val floatSort: StalinSort[Float] = new StalinSort[Float] {
-    override def canPurge(x: Float, y: Float): Boolean = x >= y
+    override def canPurge(x: Float, y: Float): Boolean = x > y
   }
 
   implicit val doubleSort: StalinSort[Double] = new StalinSort[Double] {
-    override def canPurge(x: Double, y: Double): Boolean = x >= y
+    override def canPurge(x: Double, y: Double): Boolean = x > y
   }
 }
 
@@ -62,10 +62,10 @@ object CustomTypeStalinSort extends App {
   )
 
   implicit val vegetableSort: StalinSort[Vegetable] = new StalinSort[Vegetable] {
-    override def canPurge(x: Vegetable, y: Vegetable): Boolean = x.price >= y.price
+    override def canPurge(x: Vegetable, y: Vegetable): Boolean = x.price > y.price
   }
 
   println(vegetableList.stalinSort)
 
-  println(Seq(1, 3, 3, 5, 4).stalinSort)  //if you run it, the result of is List(1, 3, 5)
+  println(Seq(1, 3, 3, 5, 4).stalinSort)  //if you run it, the result of is List(1, 3, 3, 5)
 }
