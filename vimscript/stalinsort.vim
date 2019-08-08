@@ -3,13 +3,13 @@ function! s:StalinSort(list)
     return []
   endif
   let l:return = [a:list[0]]
-  for x in a:list
-    if x > l:return[-1]
+  for x in a:list[1:]
+    if x >= l:return[-1]
       call add(l:return, x)
     endif
   endfor
   return l:return
 endfunction
 
-echo "Result: " . join(s:StalinSort([7, 8, 10, 3, 1, 11, 9, 20]), ",")
+echo "Result: " . join(s:StalinSort([7, 8, 8, 10, 3, 1, 11, 9, 11, 20]), ",")
 
