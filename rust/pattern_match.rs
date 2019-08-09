@@ -1,5 +1,7 @@
 // Author Bill Wood
-// In-place recursive sort using pattern matching (inspired by OCaml version)
+// Recursive sort using pattern matching (inspired by OCaml version)
+// Does an allocation on every call to split_off
+// Order N^^2
 // uses nightly-only feature slice_patterns
 #![feature(slice_patterns)]
 fn main() {
