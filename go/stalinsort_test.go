@@ -1,6 +1,9 @@
 package stalinsort
 
-import "testing"
+import (
+	"sort"
+	"testing"
+)
 
 func TestSortInts(t *testing.T) {
 	for _, c := range []struct {
@@ -39,4 +42,29 @@ func TestSortInts(t *testing.T) {
 			}
 		}
 	}
+}
+
+func BenchmarkSortInts(b *testing.B) {
+	sample := []int{1, 2, 10, 3, 2, 4, 15, 6, 30, 20}
+	list := make([]int, len(sample))
+
+	b.Run("stalin", func(b *testing.B) {
+		for i := 0; i < b.N; i++ {
+			copy(list, sample)
+			SortInts(list)
+		}
+	})
+
+	b.Run("quick", func(b *testing.B) {
+		for i := 0; i < b.N; i++ {
+			copy(list, sample)
+			sort.Ints(list)
+		}
+	})
+
+	b.Run("overhead", func(b *testing.B) {
+		for i := 0; i < b.N; i++ {
+			copy(list, sample)
+		}
+	})
 }
