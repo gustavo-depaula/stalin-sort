@@ -18,7 +18,7 @@ It's simple, all you need to do is iterate through the array checking if its ele
 1. (1 2 5 3 5 7) -> (**1** 2 5 3 5 7) Here the algorithm stores the first of element of the array
 2. (**1** 2 5 3 5 7) -> (1 **2** 5 3 5 7) Now it will compare the stored element with the second one, if this is bigger than the stored, it replaces the stored element by this
 3. (1 **2** 5 3 5 7) -> (1 2 **5** 3 5 7) Repeats step 2
-4. (1 2 **5** 3 5 7) -> (1 2 **5** 5 7) Since 4th element is smaller then the 3rd one that is just eliminated
+4. (1 2 **5** 3 5 7) -> (1 2 **5** 5 7) Since the 4th element is smaller then the 3rd one that is just eliminated
 5. (1 2 **5** 5 7) -> (1 2 5 **5** 7) Equal elements are preserved
 6. **(1 2 5 5 7)** Ordered array!
 
