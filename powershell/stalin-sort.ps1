@@ -11,7 +11,7 @@ function Invoke-StalinSort {
     $result = @()
 
     foreach ($item in $Array) {
-        if (($null -eq $high) -or ($item -gt $high)) {
+        if (($null -eq $high) -or ($item -ge $high)) {
             $high = $item
             $result += $item
         }
