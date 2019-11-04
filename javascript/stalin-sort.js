@@ -1,15 +1,11 @@
 function stalinSort(array) {
   if (!Array.isArray(array)) throw new TypeError('Argument must be an Array!');
 
-  let [holder] = array;
-  return array.filter((el, i) => {
-    if (i === 0) return true;
-    if(el >= holder) {
-      holder = el;
-      return true;
-    }
-    return false;
-  });
+  return array.reduce((prev, next) => {
+    if(prev.length === 0) return [next]
+    if(next >= prev[prev.length - 1]) return [...prev, next]
+    return prev
+  }, []);
 }
 
 module.exports = stalinSort
