@@ -1,10 +1,8 @@
 export function stalinSort(arr: number[]): number[] {
-  let temp = arr[0] - 1;
-  return arr.filter(el => {
-    if (temp < el) {
-      temp = el;
-      return true;
-    }
-    return false;
-  });
+  return arr.reduce<number[]>((prev, next) =>
+    !prev.length ||
+      next >= prev[prev.length - 1] ?
+      [...prev, next] :
+      prev
+  , []);
 }
