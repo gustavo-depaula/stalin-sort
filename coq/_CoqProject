@@ -1,0 +1,6 @@
+-R . stalinsort
+
+stalinsort.v
+Tactics/Crush.v
+Tactics/LibTactics.v
+Tactics/Tactics.v
