@@ -1,21 +1,23 @@
 📗
 	A class for sorting arrays.
 📗
-🌍 🐇 🧙‍♂️ 🍇
-	🆕 🍇🍉
+🌍 🐇 🧙‍♂️ 🐚T⚪🍆 🍇
+	🖍🆕 comparator 🍇 T T ➡ 🔢 🍉
+
+	🆕 🍼 comparator 🍇 T T ➡ 🔢 🍉 🍇🍉
 
 	📗
 		Returns a sorted copy of the given array.
 	📗
-	❗ 🧙‍♀️ unsortedArray 🍨🐚🔢🍆 ➡ 🍨🐚🔢🍆 🍇
+	❗ 🧙‍♀️ unsortedArray 🍨🐚T🍆 ➡ 🍨🐚T🍆 🍇
 		💭 Initializes an array of the same size of the `unsortedArray`
-		🆕 🍨 🐚🔢🍆 🐴 🐔 unsortedArray ❗ ❗ ➡ 🖍🆕 sortedArray
+		🆕 🍨 🐚T🍆 🐴 🐔 unsortedArray ❗ ❗ ➡ 🖍🆕 sortedArray
 
 		🐽 unsortedArray 0 ❗ ➡ 🖍🆕 previous
 
 		🔂 item unsortedArray 🍇
 			💭 Adds all items that's greater or equal to the previously added item
-			↪ item ▶🙌 previous 🍇
+			↪ ⁉ comparator item previous ❗ ▶🙌 0 🍇
 				🐻 sortedArray item ❗
 				item ➡ 🖍 previous
 			🍉
@@ -26,9 +28,16 @@
 🍉
 
 🏁 🍇
-	💭 Creates an unsorted array and a sorter
+	💭 Creates an unsorted array
 	🍨 1 2 5 4 6 6 8 7 🍆 ➡ array
-	🆕 🧙‍♂️ 🆕 ❗ ➡ sorter
+
+	💭 Creates a local comparator function
+	🍇 🎍🥡 a 🔢 b 🔢 ➡ 🔢
+		↩ a ➖ b
+	🍉 ➡ numberComparator
+
+	💭 Creates a StalinSorter that sorts numbers
+	🆕 🧙‍♂️ 🐚🔢🍆 🆕 numberComparator ❗ ➡ sorter
 
 	💭 Sorts the array with the sorter
 	🧙‍♀️ sorter array ❗ ➡ sortedArray

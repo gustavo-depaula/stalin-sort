@@ -3,22 +3,49 @@
 
 🐇🧝‍♂️🧪 🍇
 	✒ ❗️ 🏁 🍇
-		🆕 🧙‍♂️ 🆕 ❗ ➡ sorter
+		🎱 🐕 ❗
+		🅰 🐕 ❗
+	🍉
+
+	📗
+		Method testing sorting of numbers.
+	📗
+	❗ 🎱 🍇
+		🍇 🎍🥡 a 🔢 b 🔢 ➡ 🔢
+			↩ a ➖ b
+		🍉 ➡ numberComparator
+		🆕 🧙‍♂️ 🐚🔢🍆 🆕 numberComparator ❗ ➡ sorter
 
 		🍨 1 2 3 4 5 🍆 ➡ array1
-		⛔🐕 🧙‍♀️ sorter array1 ❗ 🙌 🍨 1 2 3 4 5 🍆 🔤Sorted arrays should reamin the same.🔤 ❗
+		⛔ 🐕 🧙‍♀️ sorter array1 ❗ 🙌 🍨 1 2 3 4 5 🍆 🔤Sorted arrays should reamin the same.🔤 ❗
 
 		🍨 5 4 3 2 1 🍆 ➡ array2
-		⛔🐕 🧙‍♀️ sorter array2 ❗ 🙌 🍨 5 🍆 🔤Sorted arrays should reamin the same.🔤 ❗
+		⛔ 🐕 🧙‍♀️ sorter array2 ❗ 🙌 🍨 5 🍆 🔤Reversed arrays should only return the first element.🔤 ❗
 
 		🍨 1 🍆 ➡ array3
-		⛔🐕 🧙‍♀️ sorter array3 ❗ 🙌 🍨 1 🍆 🔤Sorted arrays should reamin the same.🔤 ❗
+		⛔ 🐕 🧙‍♀️ sorter array3 ❗ 🙌 🍨 1 🍆 🔤Should work on arrays with only one element.🔤 ❗
 
 		🍨 1 2 3 3 3 🍆 ➡ array4
-		⛔🐕 🧙‍♀️ sorter array4 ❗ 🙌 🍨 1 2 3 3 3 🍆 🔤Sorted arrays should reamin the same.🔤 ❗
+		⛔ 🐕 🧙‍♀️ sorter array4 ❗ 🙌 🍨 1 2 3 3 3 🍆 🔤Should keep duplicates if they're already sorted.🔤 ❗
 
 		🍨 1 2 5 3 4 🍆 ➡ array5
-		⛔🐕 🧙‍♀️ sorter array5 ❗ 🙌 🍨 1 2 5 🍆 🔤Sorted arrays should reamin the same.🔤 ❗
+		⛔ 🐕 🧙‍♀️ sorter array5 ❗ 🙌 🍨 1 2 5 🍆 🔤Should throw away an element it it's rated higher than any of the previous elements.🔤 ❗
+	🍉
+
+	📗
+		Method testing sorting of strings by length.
+	📗
+	❗ 🅰 🍇
+		🍇 🎍🥡 a 🔡 b 🔡 ➡ 🔢
+			↩ 📐 a ❗ ➖ 📐 b ❗
+		🍉 ➡ stringComparator
+		🆕 🧙‍♂️ 🐚🔡🍆 🆕 stringComparator ❗ ➡ sorter
+
+		🍨 🔤a🔤 🔤ab🔤 🔤abc🔤 🍆 ➡ array1
+		⛔ 🐕 🧙‍♀️ sorter array1 ❗ 🙌 🍨 🔤a🔤 🔤ab🔤 🔤abc🔤 🍆 🔤Sorted arrays should reamin the same.🔤 ❗
+
+		🍨 🔤baboon🔤 🔤ape🔤 🔤monkey🔤 🍆 ➡ array2
+		⛔ 🐕 🧙‍♀️ sorter array2 ❗ 🙌 🍨 🔤baboon🔤 🔤monkey🔤 🍆 🔤Should sort the array.🔤 ❗
 	🍉
 🍉
 
