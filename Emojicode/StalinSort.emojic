@@ -7,7 +7,7 @@
 	📗
 		Returns a sorted copy of the given array.
 	📗
-	❓ 🧙‍♀️ unsortedArray 🍨🐚🔢🍆 ➡ 🍨🐚🔢🍆 🍇
+	❗ 🧙‍♀️ unsortedArray 🍨🐚🔢🍆 ➡ 🍨🐚🔢🍆 🍇
 		💭 Initializes an array of the same size of the `unsortedArray`
 		🆕 🍨 🐚🔢🍆 🐴 🐔 unsortedArray ❗ ❗ ➡ 🖍🆕 sortedArray
 
@@ -31,7 +31,7 @@
 	🆕 🧙‍♂️ 🆕 ❗ ➡ sorter
 
 	💭 Sorts the array with the sorter
-	🧙‍♀️ sorter array ❓ ➡ sortedArray
+	🧙‍♀️ sorter array ❗ ➡ sortedArray
 
 	💭 Prints all the elements of the array
 	🔂 item sortedArray 🍇
