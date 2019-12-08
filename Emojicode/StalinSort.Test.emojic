@@ -1,0 +1,27 @@
+📦 testtube 🏠
+📦 stalinsort 🏠
+
+🐇🧝‍♂️🧪 🍇
+	✒ ❗️ 🏁 🍇
+		🆕 🧙‍♂️ 🆕 ❗ ➡ sorter
+
+		🍨 1 2 3 4 5 🍆 ➡ array1
+		⛔🐕 🧙‍♀️ sorter array1 ❗ 🙌 🍨 1 2 3 4 5 🍆 🔤Sorted arrays should reamin the same.🔤 ❗
+
+		🍨 5 4 3 2 1 🍆 ➡ array2
+		⛔🐕 🧙‍♀️ sorter array2 ❗ 🙌 🍨 5 🍆 🔤Sorted arrays should reamin the same.🔤 ❗
+
+		🍨 1 🍆 ➡ array3
+		⛔🐕 🧙‍♀️ sorter array3 ❗ 🙌 🍨 1 🍆 🔤Sorted arrays should reamin the same.🔤 ❗
+
+		🍨 1 2 3 3 3 🍆 ➡ array4
+		⛔🐕 🧙‍♀️ sorter array4 ❗ 🙌 🍨 1 2 3 3 3 🍆 🔤Sorted arrays should reamin the same.🔤 ❗
+
+		🍨 1 2 5 3 4 🍆 ➡ array5
+		⛔🐕 🧙‍♀️ sorter array5 ❗ 🙌 🍨 1 2 5 🍆 🔤Sorted arrays should reamin the same.🔤 ❗
+	🍉
+🍉
+
+🏁 ➡ 🔢 🍇
+	↩ 👔 🆕 🧝‍♂️ 🆕 ❗ ❗
+🍉
