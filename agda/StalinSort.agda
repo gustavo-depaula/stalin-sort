@@ -38,9 +38,13 @@ module StalinSort where
     []  : SortedList []
     _∷_ : ∀ {x xs} → x ≤* xs → SortedList xs → SortedList (x ∷ xs)
 
-  -- This is necessary to prove the correctness, I can't find a way yet ...
-  postulate
-    less-stalin : ∀ (x y : ℕ) (zs : List ℕ) → x ≤ y → x ≤* stalinSort (y ∷ zs)
+  -- Proof that if x ≤ y and y is the start of a list which we then stalin sort,
+  -- then x is smaller or equal to each element in the stalin sorted list
+  less-stalin : ∀ (x y : ℕ) (zs : List ℕ) → x ≤ y → x ≤* stalinSort (y ∷ zs)
+  less-stalin x y []       x≤y = x≤y ∷ []
+  less-stalin x y (z ∷ zs) x≤y with y ≤? z
+  ...| yes y≤z = x≤y ∷ less-stalin y z zs y≤z
+  ...| no  y≰z = less-stalin x y zs x≤y
 
   -- Proof that Stalin Sort returns a sorted list
   stalinSort-correctness : ∀ (xs : List ℕ) → SortedList (stalinSort xs)
@@ -49,3 +53,5 @@ module StalinSort where
   stalinSort-correctness (x ∷ y ∷ zs) with x ≤? y
   ...| yes m≤n = less-stalin x y zs m≤n ∷ (stalinSort-correctness (y ∷ zs))
   ...| no m≰n  = stalinSort-correctness (x ∷ zs)
+
+
