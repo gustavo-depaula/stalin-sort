@@ -16,11 +16,11 @@ namespace StalinSort
             Console.WriteLine();
             /* 
              * output:
-             * 1
-             * 2
-             * 4
-             * 4
+             * 6
+             * 8
              * 9
+             * 11
+             * 12
              */
 
             var fruits = new List<Fruit>(){
