@@ -26,6 +26,9 @@ module StalinSort where
      that I couldn't solve yet. I declared it as a postulate, so somebody can
      try improving it by giving an lemma that remove the postulate and
      finish the proof =D
+
+     Update: I (PhiliPdB) finished the proof of the lemma, which means that the proof
+     is now complete and finished.
   -}
 
   -- A proof that x is less than all values in xs (thanks to Twan van Laarhoven)
