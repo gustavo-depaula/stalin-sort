@@ -1,19 +1,57 @@
+// stalin_sort implementation
+#include <iterator>
+
+// printer and test headers
 #include <iostream>
 #include <vector>
 
-void stalinSort(std::vector<int> &arr, std::vector<int> &sorted)
+// Stalin sort a given range. Return an iterator to the new end of the range.
+// Use the custom compare to
+template <class InputIt, class OutputIt, class Compare>
+OutputIt stalin_sort(InputIt start, InputIt finish, OutputIt result, const Compare& comp)
 {
-    sorted.push_back(arr[0]);
-    for (int i = 1, j = 0; i < arr.size(); i++)
-    {
-        if (arr[i] > arr[j])
-        {
-            sorted.push_back(arr[i]);
-            j++;
-        }
-    }
+	// Handle the zero-length edge case.
+	if (start == finish)
+		return result;
+
+	auto current_highest = *start;
+	++start;
+	*result = current_highest;
+	++result;
+
+	while (start != finish)
+	{
+		if (*start < current_highest)
+		{
+			++start;
+		}
+		else
+		{
+			current_highest = *start;
+			++start;
+			*result = current_highest;
+			++result;
+		}
+	}
+	return result;
 }
 
+// Stalin sort a given range. Return an iterator to the new end of the range. 
+template <class InputIt, class OutputIt>
+OutputIt stalin_sort(InputIt start, InputIt finish, OutputIt result)
+{
+	using DataType = decltype(*start);
+	auto comp = [](const DataType& l, const DataType& r)
+	{
+		return !(r < l);
+	};
+	return stalin_sort(start, finish, result, comp);
+}
+
+void stalinSort(const std::vector<int> &arr, std::vector<int> &sorted)
+{
+	stalin_sort(begin(arr), end(arr), std::back_inserter(sorted));
+}
 int main()
 {
     std::vector<int> arr = {1, 2, 4, 3, 8, 0, 9, 5, 7};
