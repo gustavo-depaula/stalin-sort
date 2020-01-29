@@ -7,24 +7,24 @@
 
 ### Introduction
 
-Stalin Sort is an efficient sorting algorithm, serving as a systematic method for placing the elements of a random access file or an array in order. Stalin Sort is also know as the best sorting algorithm of all times becasue of it's AMAZING capacity of always ordering an array with an O(n) performance.
+Stalin Sort is an efficient sorting algorithm, serving as a systematic method for placing the elements of a random access file or an array in order. Stalin Sort is also know as the best sorting algorithm of all times because of its AMAZING capacity of always ordering an array with an O(n) performance.
 
 ### How it works?
 
-It's simple, all you need to do is iterate through the array checking if its elements are in order, any element that itsn't in order you pull out, in another words, you send it to Gulag.
+It's simple, all you need to do is iterate through the array, checking if its elements are in order. Any element that isn't in order you pull out, in other words, you send it to Gulag.
 
 ### Step-by-step example
 
 1. (1 2 5 3 5 7) -> (**1** 2 5 3 5 7) Here the algorithm stores the first of element of the array
 2. (**1** 2 5 3 5 7) -> (1 **2** 5 3 5 7) Now it will compare the stored element with the second one, if this is bigger than the stored, it replaces the stored element by this
 3. (1 **2** 5 3 5 7) -> (1 2 **5** 3 5 7) Repeats step 2
-4. (1 2 **5** 3 5 7) -> (1 2 **5** 5 7) Since the 4th element is smaller then the 3rd one that is just eliminated
+4. (1 2 **5** 3 5 7) -> (1 2 **5** 5 7) Since the 4th element is smaller than the 3rd one, the 4th element will be eliminated.
 5. (1 2 **5** 5 7) -> (1 2 5 **5** 7) Equal elements are preserved
 6. **(1 2 5 5 7)** Ordered array!
 
 ### Pseudocode implementation
 
-Have in mind that this pseudocode is just an example, we strongly encourage you to code a different approach. 
+Keep in mind that this is pseudocode, and is just an example. We strongly encourage you to code a different approach. 
 
 ```
 FUNCTION stalinSort(A : list OF sortable items)
