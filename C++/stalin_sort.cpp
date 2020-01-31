@@ -21,7 +21,7 @@ OutputIt stalin_sort(InputIt start, InputIt finish, OutputIt result, const Compa
 
 	while (start != finish)
 	{
-		if (*start < current_highest)
+		if (comp(*start,current_highest))
 		{
 			++start;
 		}
