@@ -1,0 +1,3 @@
+To use this, download the file stalinsort.sb3. You can then either open Scratch on your computer (the installer can be downloaded from scratch.mit.edu/download) or just go to scratch.mit.edu/projects/editor. Then use the File menu and select "Load from your computer" and load the stalinsort file.
+The sort function can be run by including the "sort" block in your code. The block is local to the cat sprite and cannot be used from any other sprite or stage. The sort block will perform stalinsort on the list called "list", which is a global list that can be modified from anywhere.
+Pressing the flag will run a test script which sets list to [1,2,4,3,6,8,0,8,9,5,7], sorts it, and makes the cat say the result.
