@@ -1,3 +1,5 @@
+from random_list import random_list_maker
+
 def sort(l):
     max_val = l[0]
 
@@ -24,3 +26,7 @@ print("Original: {0}\nSorted: {1}\n".format(mixed_list, sorted_list))
 test_list = [1, 5, 2, 4]
 sorted_list = sort(test_list)
 print("Original: {0}\nSorted: {1}\n".format(test_list, sorted_list))
+
+random_list = random_list_maker(10)
+sorted_list = sort(random_list)
+print("Original: {0}\nSorted: {1}\n".format(random_list, sorted_list))
