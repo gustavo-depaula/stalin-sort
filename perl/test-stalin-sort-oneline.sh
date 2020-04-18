@@ -16,6 +16,7 @@ echo
 
 echo "Original list"
 shuf -i 1-9 -n 10 | tee /tmp/test_file.$$
+shuf -i 1-9 -n 10 | tee -a /tmp/test_file.$$
 echo "Sorted List"
 cat /tmp/test_file.$$ | perl -f stalin-sort-oneline.pl
 rm /tmp/test_file.$$
