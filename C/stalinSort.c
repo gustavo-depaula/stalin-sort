@@ -15,7 +15,7 @@ int stalinSort(int *arr, int size, int *sortedArr) {
     return newSize;
 }
 
-int main(int argc, char const *argv[]) {
+int main(void) {
     int i, newSize;
     int sortedArr[10];
     int array[10] = {1, 2, 4, 3, 6, 8, 0, 9, 5, 7};
@@ -23,8 +23,8 @@ int main(int argc, char const *argv[]) {
     newSize = stalinSort(array, 10, sortedArr);
 
     for (i = 0; i < newSize; ++i)
-        (void) printf("%i ", sortedArr[i]);
+        printf("%i ", sortedArr[i]);
 
-    (void) printf("\n");
+    printf("\n");
     return 0;
 }
