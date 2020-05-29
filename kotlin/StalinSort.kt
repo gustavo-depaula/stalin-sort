@@ -19,7 +19,7 @@ fun main(args: Array<String>) {
 fun <T: Comparable<T>> Iterable<T>.sortComrades(): List<T> {
     var max = firstOrNull() ?: return emptyList()
     return mapIndexedNotNull { index, comrade ->
-        if (index == 0 || comrade > max) {
+        if (index == 0 || comrade >= max) {
             max = comrade
             comrade
         } else {
