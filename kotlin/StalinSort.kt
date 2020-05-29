@@ -17,10 +17,10 @@ fun main(args: Array<String>) {
 }
 
 fun <T: Comparable<T>> Iterable<T>.sortComrades(): List<T> {
-    var max = firstOrNull() ?: return emptyList()
+    var previous = firstOrNull() ?: return emptyList()
     return mapIndexedNotNull { index, comrade ->
-        if (index == 0 || comrade >= max) {
-            max = comrade
+        if (index == 0 || comrade >= previous) {
+            previous = comrade
             comrade
         } else {
             null
