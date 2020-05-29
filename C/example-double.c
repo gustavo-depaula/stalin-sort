@@ -1,4 +1,4 @@
-// compilation: cc example_double.c stalin_sort.c
+// compilation: cc example-double.c stalin-sort.c
 
 #include <stdio.h>
 #include "stalin_sort.h"

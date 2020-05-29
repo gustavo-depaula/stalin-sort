@@ -1,10 +1,10 @@
-// compilation: cc example_stalin.c stalin_sort.c
+// compilation: cc example-stalin.c stalin-sort.c
 
-#include "stalin_sort.h"
+#include "stalin-sort.h"
 #include <string.h>
 #include <stdio.h>
 
-// Сравнение char по ASCII - коду
+// Compares char by ASCII - code
 int cmp_chars(const void *arg1, const void *arg2)
 {
 	return (* (char *) arg1) - (* (char *) arg2);
@@ -22,7 +22,7 @@ int main()
 	printf("sorted:    %s\n", text); // '!!!RSSU'
 
 	printf("reversed:  "); // 'USSR!!!'
-	while (text_sz--) // вывод отсортированного массива в обратном порядке
+	while (text_sz--) // printing sorted array from back to front
 		putchar(text[text_sz]);
 	putchar('\n');
 }
