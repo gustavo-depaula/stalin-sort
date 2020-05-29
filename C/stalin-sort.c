@@ -1,11 +1,11 @@
-#include "stalin_sort.h"
+#include "stalin-sort.h"
 #include <string.h> // for memcpy, memset
 
 /* Sorts array by non-decreasing
  * Interface is similar to qsort
  *
- * arr - array befin
- * count - number of elements
+ * arr - array begin
+ * count - number of elements in array
  * size - sizeof of 1 element
  * cmp - pointer on comparison function
  * 

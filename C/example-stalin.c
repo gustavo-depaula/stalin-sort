@@ -1,10 +1,15 @@
-// compilation: cc example-stalin.c stalin-sort.c
+/* Example of authentic stalin-sort of chars
+ *
+ * compilation: cc example-int.c stalin-sort.c
+ * (or any other compiler)
+ *
+ * Also you can just copy stalin-sort() function from stalin-sort.c
+ */
 
 #include "stalin-sort.h"
-#include <string.h>
 #include <stdio.h>
 
-// Compares char by ASCII - code
+/* Compares chars by ASCII - code */
 int cmp_chars(const void *arg1, const void *arg2)
 {
 	return (* (char *) arg1) - (* (char *) arg2);
