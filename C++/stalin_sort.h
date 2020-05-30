@@ -3,8 +3,8 @@
 
 #include <algorithm>
 
-template <typename FwdIter, typename Compare>
-FwdIter stalin_sort(FwdIter first, FwdIter last, Compare comp)
+template <typename FwdIter, typename Compare = std::less<>>
+FwdIter stalin_sort(FwdIter first, FwdIter last, Compare comp = Compare())
 {
     if (first == last) {
         return last;
@@ -22,12 +22,6 @@ FwdIter stalin_sort(FwdIter first, FwdIter last, Compare comp)
         ++result;
     }
     return result;
-}
-
-template <typename FwdIter>
-FwdIter stalin_sort(FwdIter first, FwdIter last)
-{
-    return stalin_sort(first, last, std::less<>{});
 }
 
 #endif // STALIN_SORT_H
