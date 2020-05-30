@@ -2,7 +2,7 @@
 #include <iterator>
 #include <vector>
 
-#include "stalin_sort.h"
+#include "stalin_sort.hpp"
 
 template <typename ContainerT>
 void print(const ContainerT& container)

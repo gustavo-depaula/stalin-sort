@@ -1,5 +1,5 @@
-#ifndef STALIN_SORT_H
-#define STALIN_SORT_H
+#ifndef STALIN_SORT_HPP
+#define STALIN_SORT_HPP
 
 #include <algorithm>
 
@@ -24,4 +24,4 @@ FwdIter stalin_sort(FwdIter first, FwdIter last, Compare comp = Compare())
     return result;
 }
 
-#endif // STALIN_SORT_H
+#endif // STALIN_SORT_HPP
