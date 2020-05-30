@@ -1,4 +1,5 @@
-#pragma once
+#ifndef STALIN_SORT_H
+#define STALIN_SORT_H
 
 #include <algorithm>
 
@@ -28,3 +29,5 @@ FwdIter stalin_sort(FwdIter first, FwdIter last)
 {
     return stalin_sort(first, last, std::less<>{});
 }
+
+#endif // STALIN_SORT_H
