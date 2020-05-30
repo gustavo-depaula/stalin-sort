@@ -1,10 +1,11 @@
 #include <iostream>
 #include <iterator>
+#include <vector>
 
 #include "stalin_sort.h"
 
 template <typename ContainerT>
-void print(ContainerT&& container)
+void print(const ContainerT& container)
 {
     std::copy(begin(container), end(container), std::ostream_iterator<typename std::remove_reference_t<ContainerT>::value_type>(std::cout, " "));
 }
@@ -39,12 +40,12 @@ int main()
         fail_count += expect_equal(vec, std::vector<int>{ 10, 10 });
     }
     {
-        std::vector<int> vec = { 1, 2};
+        std::vector<int> vec = { 1, 2 };
         vec.erase(stalin_sort(vec.begin(), vec.end()), vec.end());
         fail_count += expect_equal(vec, std::vector<int>{ 1, 2 });
     }
     {
-        std::vector<int> vec = { 1, 0};
+        std::vector<int> vec = { 1, 0 };
         vec.erase(stalin_sort(vec.begin(), vec.end()), vec.end());
         fail_count += expect_equal(vec, std::vector<int>{ 1 });
     }
