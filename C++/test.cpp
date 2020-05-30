@@ -1,3 +1,4 @@
+#include <cstdlib>
 #include <iostream>
 #include <iterator>
 #include <vector>
@@ -26,7 +27,7 @@ int expect_equal(const ContainerT& lhs, const ContainerT& rhs)
     return result;
 }
 
-int main()
+void test_stalin_sort()
 {
     int fail_count = 0;
     {
@@ -60,4 +61,11 @@ int main()
         fail_count += expect_equal(vec, std::vector<int>{});
     }
     std::cout << fail_count << " tests failed.\n";
+}
+
+int main()
+{
+    test_stalin_sort();
+
+    return EXIT_SUCCESS;
 }
