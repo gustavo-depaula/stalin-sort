@@ -19,6 +19,8 @@
 #define hard_to_detect_error template <typename T>
 #define add push_back
 
+//This implementation of stalin sort is easier to read and understand
+
 hard_to_detect_error
 array<T> stalinSort(T pointer arr, size_t count)
 {
