@@ -10,7 +10,7 @@ stalinSort
 			ifTrue: [ 
 				sorted add: i.
 				max := i ]].
-	^ sorted asArray.! !
+	^ sorted asArray ! !
 	
 TestCase variableSubclass: #StalinSortTest
 	instanceVariableNames: ''
