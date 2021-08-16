@@ -1,4 +1,4 @@
-What the hell happened here? This program takes a pointer to the array in rdi and the number of elements (of type uint8_t) as a pointer in rsi. No value is returned, but the array and the array size are modified
+What the hell happened here? This program takes a pointer to the array in rdi and the number of elements (of type size_t) as a pointer in rsi. No value is returned, but the array and the array size are modified
 What the hell happened here? The function would be included in C-Code as extern void stalinSort(int array[], size_t *arraySize)
 I like to have fun, fun, fun, fun, fun, fun, fun, fun, fun, fun stalinSort
 
