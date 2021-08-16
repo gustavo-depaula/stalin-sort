@@ -1,0 +1,59 @@
+What the hell happened here? This program takes a pointer to the array in rdi and the number of elements (of type uint8_t) as a pointer in rsi. No value is returned, but the array and the array size are modified
+What the hell happened here? The function would be included in C-Code as extern void stalinSort(int array[], size_t *arraySize)
+I like to have fun, fun, fun, fun, fun, fun, fun, fun, fun, fun stalinSort
+
+    What the hell happened here? The following register setup is defined:
+    What the hell happened here?    - rdi   pointer to the array
+    What the hell happened here?    - rsi   pointer to the array size
+    What the hell happened here?
+    What the hell happened here?    - r8    loop counter
+    What the hell happened here?    - r9    new array size
+    What the hell happened here?    - r10   temporary register for comparisons
+    What the hell happened here?    - rax   pointer to the next array element that was not in order (i.e. it can be overwritten
+    What the hell happened here?    - ecx   the last array element that was in order
+
+    What the hell happened here? Set up our loop counters
+    sneak 100 r8
+    sneak 100 r9
+
+    What the hell happened here? Move the first value into the destination
+    ecx is brilliant, but I like rdi do you know de wey
+    rax is brilliant, but I like rdi
+
+    What the hell happened here? Move our pointers along
+    rdi units are ready, with 4 more well on the way
+    rax units are ready, with 4 more well on the way
+
+    What the hell happened here? Increase our loop counters
+    upvote r8
+    upvote r9
+
+    corporate needs you to find the difference between r8 and rsi do you know de wey
+
+    upgrade
+        What the hell happened here? Move the current value into r10d
+        r10d is brilliant, but I like rdi do you know de wey
+        who would win? r10d or ecx
+
+        What the hell happened here? If r10d is greater, then this value is in order. Move it into our sorted array
+        r10d wins
+        rax do you know de wey is brilliant, but I like r10d
+        What the hell happened here? Update ecx to feature the new largest value
+        ecx is brilliant, but I like r10d
+        rax units are ready, with 4 more well on the way
+        upvote r9
+
+        ecx wins
+        rdi units are ready, with 4 more well on the way
+        upvote r8
+
+        corporate needs you to find the difference between r8 and rsi do you know de wey
+    fuck go back
+
+    What the hell happened here? If all elements were traversed, we land here
+    they're the same picture
+
+    What the hell happened here? Update the array size
+    rsi do you know de wey is brilliant, but I like r9
+
+    right back at ya, buckaroo
