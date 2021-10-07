@@ -1,20 +1,12 @@
 ⍝ Quick explanation:
-⍝ STALINSORT is a lambda expression, so it should work on both
-⍝ GNU APL and Dyalog APL.
-⍝ 1. The parameter vector ⍵ is attributed to A.
-⍝ 2. A sequence of indexes 2..(size of A) -- base-1 indexing --
-⍝    is generated.
-⍝ 3. For each generated index, another lambda checks whether
-⍝    there is any number greater than A[index] before it. This
-⍝    creates a vector where a 0 is attributed to every number
-⍝    that should remain on the answer; a 0 is prepended to this
-⍝    vector so that the first number always remains.
-⍝ 4. The vector is NOT'd, so 0's become 1's and vice-versa.
-⍝ 5. The NOT'd vector works as a selector among A: every number
-⍝    with a corresponding 1 in its place makes the answer, while
-⍝    the numbers with 0's in their positions are eliminated.
+⍝ STALINSORT is a lambda expression, so it should work on
+⍝ GNU APL, Dyalog APL, NARS2000, ngn/apl, and dzaima/APL.
+⍝ 1. Find the cumulative maximum of the argument vector ⍵.
+⍝ 2. Compute a mask indicating which elements of ⍵ are
+⍝    equal to the corresponding cumulative maximum.
+⍝ 3. Filter so only the indicated elements of ⍵ remain.
 
-STALINSORT←{(~0,({×+/(A[⍳⍵]>(⍵⌷A))}¨(1↓⍳⍴A)))/A←⍵}
+STALINSORT←{⍵⌿⍨⍵=⌈\⍵}
 
 ⍝ Tests
 STALINSORT ⍳15   ⍝ Applied to sequence 1..15 inclusive
