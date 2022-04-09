@@ -1,22 +1,27 @@
-100 input "enter number of elements in array";n:dim arr$(n)
-110 ns=1
-120 dim brr$(n)
-130 biggestidx=1
-140 for i=1 to n
-150 print "enter value of element #";i;:input arr$(i)
-160 next i
-170 for i=1 to n
-180 if i=1 then goto 220
-190 if arr$(i)<arr$(biggestidx) then goto 230
-200 biggestidx=i
-210 ns=ns+1
-220 brr$(ns)=arr$(i)
-230 next i
-240 print "[ ";
-250 for i=1 to ns
-260 print brr$(i);
-270 if i<>ns then print ", ";
-280 next i
-290 print " ]"
-300 end
+100 input "enter number of elements in array";n
+110 if n<1 then goto 330
+120 ns=1
+130 dim arr$(n)
+140 dim brr$(n)
+150 biggestidx=1
+160 for i=1 to n
+170 print "enter value of element #";i;:input arr$(i)
+180 next i
+190 for i=1 to n
+200 if i=1 then goto 240
+210 if arr$(i)<arr$(biggestidx) then goto 250
+220 biggestidx=i
+230 ns=ns+1
+240 brr$(ns)=arr$(i)
+250 next i
+260 print "[ ";
+270 for i=1 to ns
+280 print brr$(i);
+290 if i<>ns then print ", ";
+300 next i
+310 print " ]"
+320 goto 350
+330 print "[ ]"
+340 goto 350
+350 end
 run
