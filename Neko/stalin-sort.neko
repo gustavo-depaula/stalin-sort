@@ -1,0 +1,22 @@
+var stalinSort = function(gulagCandidates) {
+    var survivors = $amake($asize(gulagCandidates));
+
+    var idx = 0;
+    var survivorIdx = 0;
+    var curr = gulagCandidates[idx];
+    if $asize(gulagCandidates) > 0 {
+        do {
+            if gulagCandidates[idx] >= curr {
+                $ablit(survivors,survivorIdx,gulagCandidates,idx,1);
+                curr = gulagCandidates[idx];
+                survivorIdx += 1;
+            }
+            idx += 1;
+        }
+        while idx < $asize(gulagCandidates);
+    }
+    return $asub(survivors,0,survivorIdx);
+}
+
+var survivors = stalinSort($array(1,2,5,3,5,7));
+$print(survivors+"\n")
