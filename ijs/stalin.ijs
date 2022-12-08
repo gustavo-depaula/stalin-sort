@@ -1,9 +1,9 @@
 NB. Stalin sort in J
 NB. 1. Compute an array with the cumulative maximums
-NB. 2. Compute indices which are equal to their cumulative maximum
-NB. 3. Keep only those indices
+NB. 2. Compute mask indicating which are equal to their cumulative maximum
+NB. 3. Keep only those
 
-   stalin =. ] {~ [: I. >./\ = ]
+   stalin =. #~ >./\ = ]
 
 NB. Tests (mostly the same as the APL file)
    stalin i. 15 NB. stalin 0..14
