@@ -8,7 +8,6 @@ HOW IZ I stalin_sort YR array AN YR length
   I HAS A sorted_array_index ITZ 0
 
   IM IN YR loop UPPIN YR index TIL BOTH SAEM index AN length
-    VISIBLE index
     I HAS A value ITZ array'Z SRS index
 
     NOT initialized, O RLY?
