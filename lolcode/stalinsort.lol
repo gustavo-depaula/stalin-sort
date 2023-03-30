@@ -40,7 +40,12 @@ array HAS A SRS 3 ITZ 5.1
 array HAS A SRS 4 ITZ 0.1
 I HAS A length ITZ 4
 
-I HAS A sorted ITZ I IZ stalin_sort YR array AN YR length MKAY
-VISIBLE sorted'Z length
+I HAS A result ITZ I IZ stalin_sort YR array AN YR length MKAY
+VISIBLE result'Z length
+I HAS A index ITZ 0
+I HAS A sorted ITZ result'Z array
+IM IN YR loop UPPIN YR index TIL BOTH SAEM index AN result'Z length
+  VISIBLE sorted'Z SRS index
+IM OUTTA YR loop
 
 KTHXBYE
