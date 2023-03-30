@@ -32,6 +32,7 @@ HOW IZ I stalin_sort YR array AN YR length
   FOUND YR result
 IF U SAY SO
 
+BTW here's a test array with 5 elements
 I HAS A array ITZ A BUKKIT
 array HAS A SRS 0 ITZ 3.14
 array HAS A SRS 1 ITZ 3.15
@@ -40,6 +41,7 @@ array HAS A SRS 3 ITZ 5.1
 array HAS A SRS 4 ITZ 0.1
 I HAS A length ITZ 4
 
+BTW let's output the results
 I HAS A result ITZ I IZ stalin_sort YR array AN YR length MKAY
 VISIBLE result'Z length
 I HAS A index ITZ 0
