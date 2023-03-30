@@ -39,7 +39,7 @@ array HAS A SRS 1 ITZ 3.15
 array HAS A SRS 2 ITZ 2.1
 array HAS A SRS 3 ITZ 5.1
 array HAS A SRS 4 ITZ 0.1
-I HAS A length ITZ 4
+I HAS A length ITZ 5
 
 BTW let's output the results
 I HAS A result ITZ I IZ stalin_sort YR array AN YR length MKAY
