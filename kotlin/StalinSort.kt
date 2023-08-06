@@ -1,22 +1,26 @@
-fun main(args: Array<String>) {
-    val intComrades = listOf(0, 2, 1, 4, 3, 6, 5).sortComrades()
-    
-    val charComrades = listOf('A', 'C', 'B', 'E', 'D').sortComrades()
+fun <T : Comparable<T>> Iterable<T>.stalinSorted(): List<T> =
+    if (none()) emptyList()
+    else {
+        var previous = first()
+        filter { next ->
+            if (next >= previous) true.also { previous = next }
+            else false
+        }
+    }
 
-    val redArmyRanks =  listOf(
-        RedArmyRank.SOLDIER, 
-        RedArmyRank.ASSISTANT_PLATOON_LEADER,
-        RedArmyRank.SQUAD_LEADER).sortComrades()
-    
-    val dickwads = listOf(
-        RedArmyDickwad("Stalin", RedArmyRank.SUPREME_COMMANDER),
-        RedArmyDickwad("Pablo", RedArmyRank.NOT_EVEN_RUSSIAN),
-        RedArmyDickwad("Putin", RedArmyRank.BEAR_RIDER)).sortComrades()
-    
-    println("$intComrades\n$charComrades\n$redArmyRanks\n$dickwads")
+fun <T : Comparable<T>> MutableIterable<T>.stalinSort() {
+    val it = iterator()
+    if (!it.hasNext()) return
+    var previous = it.next()
+    var curr: T
+    while (it.hasNext()) {
+        curr = it.next()
+        if (curr < previous) it.remove()
+        else previous = curr
+    }
 }
 
-fun <T: Comparable<T>> Iterable<T>.sortComrades(): List<T> {
+fun <T: Comparable<T>> Iterable<T>.sortComradesOld(): List<T> {
     var previous = firstOrNull() ?: return emptyList()
     return mapIndexedNotNull { index, comrade ->
         if (index == 0 || comrade >= previous) {
@@ -28,19 +32,14 @@ fun <T: Comparable<T>> Iterable<T>.sortComrades(): List<T> {
     }
 }
 
-enum class RedArmyRank {
-    NOT_EVEN_RUSSIAN,
-    SOLDIER,
-    SQUAD_LEADER,
-    ASSISTANT_PLATOON_LEADER,
-    COMPANY_SERGEANT,
-    BEAR_RIDER,
-    SUPREME_COMMANDER
-}
-
-data class RedArmyDickwad(
-    val name: String,
-    val rank: RedArmyRank
-) : Comparable<RedArmyDickwad> {
-    override operator fun compareTo(other: RedArmyDickwad) = rank.compareTo(other.rank)
+fun <T : Comparable<T>> Iterable<T>.sortComrades(): List<T> {
+    var previous = firstOrNull() ?: return emptyList()
+    return mapNotNull { comrade ->
+        if (comrade >= previous) {
+            previous = comrade
+            comrade
+        } else {
+            null
+        }
+    }
 }
