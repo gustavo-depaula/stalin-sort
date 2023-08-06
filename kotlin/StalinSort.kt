@@ -20,18 +20,6 @@ fun <T : Comparable<T>> MutableIterable<T>.stalinSort() {
     }
 }
 
-fun <T: Comparable<T>> Iterable<T>.sortComradesOld(): List<T> {
-    var previous = firstOrNull() ?: return emptyList()
-    return mapIndexedNotNull { index, comrade ->
-        if (index == 0 || comrade >= previous) {
-            previous = comrade
-            comrade
-        } else {
-            null
-        }
-    }
-}
-
 fun <T : Comparable<T>> Iterable<T>.sortComrades(): List<T> {
     var previous = firstOrNull() ?: return emptyList()
     return mapNotNull { comrade ->
