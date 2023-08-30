@@ -17,11 +17,11 @@ stalin_sort(){
 		cmp=lexical
 	fi
   	for i in "$@"; do
-    	if "$cmp" "$max" "$i"; then
-    		continue;
-    	fi
-    out+=("$i")
-    max=$i
+		if "$cmp" "$max" "$i"; then
+			continue;
+		fi
+		out+=("$i")
+		max=$i
 	done
 	printf '%q ' "${out[@]}"
 }
