@@ -24,6 +24,7 @@ stalin_sort(){
 		max=$i
 	done
 	printf '%q ' "${out[@]}"
+ 	printf '\n'
 }
 #TEST
 #stalin_sort 1 2 10 3 4 5 15 6 30 20
