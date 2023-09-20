@@ -1,26 +1,29 @@
+from typing import Any, Optional
+
 class Node:
-    def __init__(self, data):
-        self.data = data
-        self.next = None
+    def __init__(self, data: Any):
+        self.data: Any = data
+        self.next: Optional[Node] = None
 
 
-class Linkedlist:
+class LinkedList:
     def __init__(self):
-        self.head = None
+        self.head: Optional[Node] = None
+        self.tail: Optional[Node] = None # for efficient append
 
     def stalin_sort(self):
-        pointer = prev = None
-        if self.head:
-            pointer = self.head.next
-            prev = self.head
-        while pointer is not None:
-            if pointer.data < prev.data:  # eliminate pointer node
-                prev.next = pointer.next
-
+        curr = prev = None
+        if not self.head:
+            return
+        curr = self.head.next
+        prev = self.head
+        while curr is not None:
+            if curr.data < prev.data:  # eliminate "curr" node
+                prev.next = curr.next
             else:
-                prev = pointer
-            pointer = pointer.next
-
+                prev = curr
+            curr = curr.next
+        self.tail = prev
 
     def display_list(self):
         pointer = self.head
@@ -33,15 +36,15 @@ class Linkedlist:
         temp = Node(data)
         if self.head is None:
             self.head = temp
+            self.tail = temp
         else:
-            pointer = self.head
-            while pointer.next is not None:
-                pointer = pointer.next
-            pointer.next = temp
+            assert self.tail is not None
+            self.tail.next = temp
+            self.tail = temp
 
 
 # create linkedlist
-ll = Linkedlist()
+ll = LinkedList()
 ll.append(2)
 ll.append(6)
 ll.append(8)
