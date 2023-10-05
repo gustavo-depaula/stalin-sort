@@ -1,0 +1,96 @@
+TestStalinSort()
+
+
+'IMPLEMENTATION
+Sub StalinSort
+  indices = Array.GetAllIndices(inputArray)
+  outputArray = ""
+  outputArray[1] = inputArray[indices[1]]
+  top = 1
+  
+  For i = 2 To Array.GetItemCount(indices)
+    num = inputArray[indices[i]]
+    If num >= outputArray[top] Then
+      top = top + 1
+      outputArray[top] = num
+    EndIf
+  EndFor 
+EndSub
+
+
+Sub TestStalinSort  'Do some tests
+  'test 1 -> [1, 2, 3, 4, 5]
+  test1[0] = 1
+  test1[1] = 2
+  test1[2] = 3
+  test1[3] = 4
+  test1[4] = 5
+
+  'test 2 -> [10]
+  test2[0] = 10
+  test2[1] = 1
+  test2[2] = 2
+  test2[3] = 3
+  test2[4] = 4
+
+  'test 3 -> []
+  test3 = ""
+
+  'test 4 -> [2, 4, 7, 9, 11]
+  test4[0] = 2
+  test4[1] = 4
+  test4[2] = 7
+  test4[3] = 3
+  test4[4] = 5
+  test4[5] = 9
+  test4[6] = 8
+  test4[7] = 1
+  test4[8] = 11
+
+  'Do tests
+  inputArray = test1
+  StalinSort()
+  PrintArrays()
+
+  inputArray = test2
+  StalinSort()
+  PrintArrays()
+
+  inputArray = test3
+  StalinSort()
+  PrintArrays()
+
+  inputArray = test4
+  StalinSort()
+  PrintArrays()
+EndSub
+
+
+Sub PrintArrays  'Prints input and output array
+  indices = Array.GetAllIndices(inputArray)
+  If Array.GetItemCount(indices) = 0 Then
+    indices[1] = 1
+    inputArray[1] = " "
+  EndIf  
+  sep = "  Input array: "
+  For i = 1 To Array.GetItemCount(indices)
+    TextWindow.Write(sep)
+    TextWindow.Write(inputArray[indices[i]])
+    sep = ", "
+  EndFor
+  
+  TextWindow.WriteLine("")
+  If Array.GetItemCount(outputArray) = 0 Then
+    outputArray[1] = " "
+  EndIf
+  sep = " Output array: "
+  For i = 1 To Array.GetItemCount(outputArray)
+    TextWindow.Write(sep)
+    TextWindow.Write(outputArray[i])
+    sep = ", "
+  EndFor
+  
+  TextWindow.WriteLine("") 
+EndSub
+
+'By Krepsy3, 2023
