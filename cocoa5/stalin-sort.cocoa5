@@ -1,0 +1,53 @@
+define StalinSort(L)
+  n := len(L);
+  if n <= 1 then return L; endif;
+  bigger := L[1];
+  B := [];
+  for i := 1 to n do
+    if L[i] >= bigger then
+      bigger := L[i];
+      append(ref B, L[i]);
+    endif;
+  endfor;
+  return B;
+enddefine; -- stalinsort_naive
+
+
+
+define StalinSortInPlace(ref L)
+  if len(L) <= 1 then return; endif;
+  bigger := L[1];
+  i := 1;
+  while i <= len(L) do
+    if L[i] < bigger then
+      remove(ref L, i);
+    else
+      bigger := L[i];
+      incr(ref i);
+    endif;
+  endwhile;
+enddefine; -- stalinsort
+
+
+
+// Test
+
+use R ::= ZZ[x,y,z], DegLex;
+
+println "Normal approach:";
+StalinSort([]);
+StalinSort([3]);
+StalinSort([3,5]);
+StalinSort([5,3]);
+StalinSort([1,2,3,4,5]);
+StalinSort([4,23,3,4,1,3,39,192,56,1234]);
+StalinSort([x^2,x^2*y,y,y^3*z,y,z^3,x^4,y*z^4]); // We can even sort power products!
+
+println "\nInplace approach:";
+L := []; StalinSortInPlace(ref L); println L;
+L := [3]; StalinSortInPlace(ref L); println L;
+L := [3,5]; StalinSortInPlace(ref L); println L;
+L := [5,3]; StalinSortInPlace(ref L); println L;
+L := [1,2,3,4,5]; StalinSortInPlace(ref L); println L;
+L := [4,23,3,4,1,3,39,192,56,1234]; StalinSortInPlace(ref L); println L;
+L := [x^2,x^2*y,y,y^3*z,y,z^3,x^4,y*z^4]; StalinSortInPlace(ref L); println L; // We can even sort power products!
