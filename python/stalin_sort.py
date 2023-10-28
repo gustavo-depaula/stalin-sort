@@ -1,26 +1,23 @@
 from random_list import random_list_maker
 
-def sort(l):
-    max_val = l[0]
-    return [max_val := x for x in l if x >= max_val]
+
+def sort(sequence: list) -> list:
+    if sequence:
+        max_val = sequence[0]
+        return [max_val := x for x in sequence if x >= max_val]
+    return sequence
 
 
-ordered_list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-sorted_list = sort(ordered_list)
-print("Original: {0}\nSorted: {1}\n".format(ordered_list, sorted_list))
+def test(sequence):
+    print(f'Original: {sequence}')
+    print(f'Sorted: {sort(sequence)}')
+    print()
 
-reversed_list = [9, 8, 7, 6, 5, 4, 3, 2, 1]
-sorted_list = sort(reversed_list)
-print("Original: {0}\nSorted: {1}\n".format(reversed_list, sorted_list))
 
-mixed_list = [1, 3, 2, 5, 4, 7, 6, 9, 8]
-sorted_list = sort(mixed_list)
-print("Original: {0}\nSorted: {1}\n".format(mixed_list, sorted_list))
+if __name__ == '__main__':
 
-test_list = [1, 5, 2, 4]
-sorted_list = sort(test_list)
-print("Original: {0}\nSorted: {1}\n".format(test_list, sorted_list))
-
-random_list = random_list_maker(10)
-sorted_list = sort(random_list)
-print("Original: {0}\nSorted: {1}\n".format(random_list, sorted_list))
+    test([1, 2, 3, 4, 5, 6, 7, 8, 9])  # ordered_list
+    test([9, 8, 7, 6, 5, 4, 3, 2, 1])  # reversed_list
+    test([1, 3, 2, 5, 4, 7, 6, 9, 8])  # mixed_list
+    test([1, 5, 2, 4])  # test_list
+    test(random_list_maker(10))  # random_list
