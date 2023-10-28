@@ -1,11 +1,28 @@
+from typing import Callable
 from random_list import random_list_maker
 
 
-def sort(sequence: list) -> list:
-    if sequence:
-        max_val = sequence[0]
-        return [max_val := x for x in sequence if x >= max_val]
-    return sequence
+def sort[T](sequence: list[T], /, *, key: Callable[[T, T], bool] = None, reverse: bool = False) -> list[T]:
+    if not sequence:
+        return sequence
+
+    if key:
+        if reverse:
+            def criteria(x: T, y: T) -> bool:
+                return not key(x, y)
+        else:
+            def criteria(x: T, y: T) -> bool:
+                return key(x, y)
+    else:
+        if reverse:
+            def criteria(x: T, y: T) -> bool:
+                return x <= y
+        else:
+            def criteria(x: T, y: T) -> bool:
+                return x >= y
+
+    max_val = sequence[0]
+    return [max_val := x for x in sequence if criteria(x, max_val)]
 
 
 def test(sequence):
@@ -21,3 +38,5 @@ if __name__ == '__main__':
     test([1, 3, 2, 5, 4, 7, 6, 9, 8])  # mixed_list
     test([1, 5, 2, 4])  # test_list
     test(random_list_maker(10))  # random_list
+
+    f = sorted([1, 2])
