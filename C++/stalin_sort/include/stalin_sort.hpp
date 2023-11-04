@@ -9,7 +9,7 @@ template <std::input_iterator Iter,
           std::weakly_incrementable OIter>
           requires std::indirectly_writable<OIter, std::iter_value_t<Iter>>
 constexpr void stalin_sort(Iter first, Sentinel last, OIter out)
-#elif __cplusplus <= 201703L
+#elif __cplusplus > 199711L && __cplusplus <= 201703L
     template <typename Iter, typename OIter>
     constexpr void stalin_sort(Iter first, Iter last, OIter out)
 #else
