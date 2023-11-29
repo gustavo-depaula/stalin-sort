@@ -1,0 +1,11 @@
+function stalinSort(list: numbers) :: numbers:
+    set {_bigger} to 0
+    loop {_list::*}:
+        if loop-value >= {_bigger}:
+            set {_bigger} to loop-value
+            set {_sorted::%loop-index%} to loop-value
+    return {_sorted::*}
+
+# command /stalin:
+#     trigger:
+#         send stalinSort(1, 2, 5, 3, 5, 7)
