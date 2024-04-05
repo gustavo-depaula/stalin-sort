@@ -3,14 +3,14 @@
 /// @return {list} $b
 @function stalin($list) {
   $bigger: 0;
-  $b: ();
+  $final: ();
 
   @for $i from 1 through length($list) {
     @if nth($list, $i) >= $bigger {
       $bigger: nth($list, $i);
-      $b: append($b, nth($list, $i));
+      $final: append($final, nth($list, $i));
     }
   }
 
-  @return $b;
+  @return $final;
 }
