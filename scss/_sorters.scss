@@ -1,0 +1,17 @@
+/// Stalin sort implementation in SCSS
+/// @param {list} $list
+/// @return {list} $b
+@function stalin($list) {
+  $n: length($list);
+  $bigger: 0;
+  $b: ();
+
+  @for $i from 1 through $n {
+    @if nth($list, $i) >= $bigger {
+      $bigger: nth($list, $i);
+      $b: append($b, nth($list, $i));
+    }
+  }
+
+  @return $b;
+}

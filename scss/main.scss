@@ -1,0 +1,5 @@
+@use 'sorters';
+
+body::after {
+  content: sorters.stalin((1,2,5,3,5,7));
+}
