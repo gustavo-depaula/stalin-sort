@@ -1,6 +1,6 @@
 /// Stalin sort implementation in SCSS
 /// @param {list} $list
-/// @return {list} $b
+/// @return {list} $final
 @function stalin($list) {
   $bigger: 0;
   $final: ();
