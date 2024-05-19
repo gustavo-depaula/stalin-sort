@@ -1,4 +1,4 @@
-# Keep elements which equal the cumulative maximum# Keep only items which equal the cumulative maximum
+# Keep only items which equal the cumulative maximum
 ¨@stalin_sort:1|ɖ∴=Tİ;
 
 ⟨ 1 | 2 | 5 | 3 | 5 | 7 | 4 ⟩             ¨@stalin_sort; ,
