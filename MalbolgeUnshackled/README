@@ -1,0 +1,11 @@
+
+This program is implementation of StalinSort, hereby placed in the public domain.
+It's advised to run the program using included fast20 interpreter.
+This program has been written in Malbolge Unshackled (20 trit rotation variant).
+Input is expected to be passed in form of ASCII characters. Example:
+
+ABCDEABCDFG
+=> ABCDEFG
+
+Have fun,
+               ~~ Krzysztof "Palaiologos" Szewczyk, Aug 2019
