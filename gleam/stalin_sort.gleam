@@ -15,7 +15,7 @@ import gleam/order.{type Order, Eq, Gt, Lt}
 ///   fn(a, b) { order.negate(int.compare(a, b)) }
 /// )
 /// ```
-pub fn stalinsort(list: List(t), cmp: fn(t, t) -> Order) -> List(t) {
+pub fn stalin_sort(list: List(t), cmp: fn(t, t) -> Order) -> List(t) {
   case list {
     [] -> []
     [x] -> [x]
