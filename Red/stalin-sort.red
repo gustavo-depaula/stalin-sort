@@ -7,7 +7,7 @@ Red [
 	]
 ]
 
-stalin-sort: function ["Stalin-sorts a series (modified)." values [series!]][
+stalin-sort: func ["Stalin-sorts a series (modified)." values [series!] /local foo bar][
 	parse values [any [
 		set foo skip
 		remove any [set bar skip if (lesser? bar foo)]
