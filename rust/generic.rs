@@ -13,12 +13,21 @@ fn main() {
     println!("{:?}", stalin_sort(ideologies));
 }
 
-fn stalin_sort<T: PartialOrd>(x: Vec<T>) -> Vec<T> {
-    let mut y = vec!();
-    for v in x {
-        if y.len() == 0 || &v >= y.last().unwrap() {
-            y.push(v);
-        }
-    }
-    y
+fn stalin_sort<T: PartialOrd + Clone>(x: Vec<T>) -> Vec<T> {
+    stalin_sort_iter(x.into_iter()).collect()
+}
+
+fn stalin_sort_iter<T: PartialOrd + Clone>(
+    arr: impl Iterator<Item = T>,
+) -> impl Iterator<Item = T> {
+    arr.scan(None, |running_max, n| {
+        *running_max =
+            Some(
+                running_max
+                    .clone()
+                    .map_or(n.clone(), |m: T| if n > m { n.clone() } else { m.clone() }),
+            );
+        Some((running_max.clone().unwrap(), n))
+    })
+    .filter_map(|(max, n)| if max == n { Some(n) } else { None })
 }
