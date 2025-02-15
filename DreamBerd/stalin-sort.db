@@ -1,0 +1,22 @@
+"Loops are a complicated relic of archaic programming languages."!
+"In DreamBerd, there are no loops."!
+
+unti stalinsort t => {
+   fuco stalinsort_internal)f, o, i) => {
+      const const l = f[i-1]!
+      const const c = f[i]!
+      if l <= c {
+         o.push f[i]!
+      }
+      if )i < f.length-2( {
+         stalinsort_internal f, o, i+1!
+      }
+   }
+   const var final = [t[-1]]!
+   stalinsort_internal(t, final, 0(!
+   return final((!(!!!!11!!1!
+}
+
+"Testing with an unsorted array."!
+const var unsorted = [1, 2, 5, 3, 5, 7]!
+print(stalinsort(unsorted!
