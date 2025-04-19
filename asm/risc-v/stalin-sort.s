@@ -20,9 +20,9 @@
 
 	.text
 
-	li a7, 4
+	li 		a7, 4
 	
-	la a0, str
+	la 		a0, str
 
 	ecall
 
@@ -32,9 +32,9 @@
 
 .macro print_int(%var)
 
-	li a7, 1
+	li 		a7, 1
 
-	mv a0, %var
+	mv 		a0, %var
 
 	ecall
 
@@ -52,7 +52,7 @@
 
 .macro null.exit()
 
-	li a7, 10
+	li 		a7, 10
 
 	ecall
 
@@ -69,15 +69,21 @@ _start:
 
     # Read the number of elements
 
-    int_input	t0
+    print_str		"Please, enter the number of elements:	"
+    
+    int_input		t0
     addi 		sp sp -100
     mv			s0 sp
     li			t1 0
+    
+    print_str		"Now, please enter "
+    print_int		t0	
+    print_str		" elemets, one per line:\n"
 
 read_loop:
 
     beq			t1 t0 end_read_loop 
-    int_input	t2
+    int_input		t2
     sw			t2 0(sp)
     addi		sp sp 4
     addi		t1 t1 1
@@ -115,17 +121,18 @@ end_sort_loop:
 
     li			t1, 0
     mv			s1, s0
-    print_str	"["
+    print_str		"\nStalin-sorted array:	"
+    print_str		"["
 
 print_loop:
 
     beq			t1, t4, end_print_loop
     lw			t6, 0(s1)
     addi		s1, s1, 4
-    print_int	t6
+    print_int		t6
     addi		t1, t1, 1
     bge			t1, t4, end_print_comma
-    print_str	", "
+    print_str		", "
 
 end_print_comma:
 
@@ -133,25 +140,5 @@ end_print_comma:
 
 end_print_loop:
 
-    print_str	"]\n"
+    print_str		"]\n"
     null.exit
-
-
-
-    .data
-
-str:
-
-    .asciz "["
-
-comma:
-
-    .asciz ", "
-
-close_bracket:
-
-    .asciz "]"
-
-newline:
-
-    .asciz "\n"
