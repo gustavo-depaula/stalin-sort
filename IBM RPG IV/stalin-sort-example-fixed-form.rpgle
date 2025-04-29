@@ -1,5 +1,7 @@
      H DftActGrp(*No)
 
+     C* Stalin Sort
+
      DARR              S             10I 0 DIM(6)
      DSIZE             S              3U 0 INZ(6)
      DI                S              3U 0

@@ -1,6 +1,8 @@
 **free
 ctl-opt dftactgrp(*no);
 
+// Stalin Sort
+
 dcl-s arr int(10) dim(6);
 dcl-s size uns(3) inz(6);
 dcl-s i uns(3);
