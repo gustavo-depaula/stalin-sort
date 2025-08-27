@@ -1,0 +1,38 @@
+%!PS
+/stalinSort {
+  /A exch def
+  /n A length def
+  /B n array def
+  /k 0 def
+  /bigger -2147483647 def
+  0 1 n 1 sub {
+    /i exch def
+    A i get /x exch def
+    x bigger ge {
+      /bigger x def
+      B k x put
+      /k k 1 add def
+    } if
+  } for
+  B 0 k getinterval
+} def
+
+/showArray {
+  /arr exch def
+  /len arr length def
+  /Courier findfont 14 scalefont setfont
+  72 720 moveto
+  ([) show
+  0 1 len 1 sub {
+    /i exch def
+    /s 32 string def
+    arr i get s cvs show
+    i len 1 sub lt {
+      (, ) show
+    } if
+  } for
+  (]) show
+} def
+
+[1 3 2 2 5 4 7] stalinSort showArray
+showpage
