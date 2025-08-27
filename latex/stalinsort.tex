@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage{expl3,xparse}
+\ExplSyntaxOn
+
+\int_new:N \l__ss_max_int
+\int_new:N \l__ss_tmp_int
+\clist_new:N \l__ss_out_clist
+
+\cs_new_protected:Npn \stalin_sort:n #1
+  {
+    \int_set:Nn \l__ss_max_int { -2147483647 }
+    \clist_clear:N \l__ss_out_clist
+
+    \clist_map_inline:nn {#1}
+      {
+        \int_set:Nn \l__ss_tmp_int { ##1 }
+        \int_compare:nTF { \l__ss_tmp_int >= \l__ss_max_int }
+          {
+            \int_set_eq:NN \l__ss_max_int \l__ss_tmp_int
+            \clist_put_right:Nx \l__ss_out_clist { \int_use:N \l__ss_tmp_int }
+          }
+          { }
+      }
+
+    \clist_use:Nn \l__ss_out_clist {,~}
+  }
+
+\NewDocumentCommand{\StalinSort}{m}
+  { \stalin_sort:n {#1} }
+
+\ExplSyntaxOff
+
+\begin{document}
+Input: 1, 2, 5, 3, 5, 7
+
+Output: \StalinSort{1, 2, 5, 3, 5, 7}
+\end{document}
