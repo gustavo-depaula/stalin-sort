@@ -1,26 +1,48 @@
-from random_list import random_list_maker
-
-def sort(l):
-    max_val = l[0]
-    return [max_val := x for x in l if x >= max_val]
+from typing import Callable
 
 
-ordered_list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-sorted_list = sort(ordered_list)
-print("Original: {0}\nSorted: {1}\n".format(ordered_list, sorted_list))
+def sort[T](sequence: list[T], /, *, key: Callable[[T, T], bool] | None = None, reverse: bool = False) -> list[T]:
+    if not sequence:
+        return sequence
 
-reversed_list = [9, 8, 7, 6, 5, 4, 3, 2, 1]
-sorted_list = sort(reversed_list)
-print("Original: {0}\nSorted: {1}\n".format(reversed_list, sorted_list))
+    if key:
+        if reverse:
+            def criteria(x, y) -> bool:
+                return not key(x, y)
+        else:
+            def criteria(x, y) -> bool:
+                return key(x, y)
+    else:
+        if reverse:
+            def criteria(x, y) -> bool:
+                return x <= y
+        else:
+            def criteria(x, y) -> bool:
+                return x >= y
 
-mixed_list = [1, 3, 2, 5, 4, 7, 6, 9, 8]
-sorted_list = sort(mixed_list)
-print("Original: {0}\nSorted: {1}\n".format(mixed_list, sorted_list))
+    max_val = sequence[0]
+    return [max_val := x for x in sequence if criteria(x, max_val)]
 
-test_list = [1, 5, 2, 4]
-sorted_list = sort(test_list)
-print("Original: {0}\nSorted: {1}\n".format(test_list, sorted_list))
 
-random_list = random_list_maker(10)
-sorted_list = sort(random_list)
-print("Original: {0}\nSorted: {1}\n".format(random_list, sorted_list))
+if __name__ == '__main__':
+    from random import randint
+    from test_utils import test_all
+
+
+    def get_random_numbers(length, min_val=0, max_val=100):
+        return [randint(min_val, max_val) for _ in range(length)]
+
+
+    def test(sequence):
+        print(f'Original: {sequence}')
+        print(f'Sorted: {sort(sequence)}')
+        print()
+
+
+    test([1, 2, 3, 4, 5, 6, 7, 8, 9])  # ordered_list
+    test([9, 8, 7, 6, 5, 4, 3, 2, 1])  # reversed_list
+    test([1, 3, 2, 5, 4, 7, 6, 9, 8])  # mixed_list
+    test([1, 5, 2, 4])  # test_list
+    test(get_random_numbers(10))  # random_list
+
+    test_all(sort)
