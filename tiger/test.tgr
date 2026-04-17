@@ -1,0 +1,56 @@
+let
+    import "stalin_sort.tgr"
+
+    function print_arr(arr : int_arr, len : int) =
+        (
+            print("[");
+            for i := 0 to len - 1 do
+                (
+                    print_int(arr[i]);
+                    if i <> len - 1 then
+                        print(", ")
+                );
+            print("]")
+        )
+
+    function pretty_print(arr: int_arr, len : int) =
+        (
+            print("stalin_sort(");
+            print_arr(arr, len);
+            print(") = ");
+            let
+                var len := stalin_sort(arr, len)
+            in
+                print_arr(arr, len);
+                print("\n")
+            end
+        )
+in
+    let
+        var arr := int_arr[5] of 0
+        var arr2 := int_arr[3] of 0
+        var arr3 := int_arr[6] of 0
+    in
+        (
+            arr[0] := 1;
+            arr[1] := 2;
+            arr[2] := 3;
+            arr[3] := 2;
+            arr[4] := 1;
+            pretty_print(arr, 5);
+
+            arr2[0] := 3;
+            arr2[1] := 35;
+            arr2[2] := 23;
+            pretty_print(arr2, 3);
+
+            arr3[0] := 69;
+            arr3[1] := 69;
+            arr3[2] := 69;
+            arr3[3] := 69;
+            arr3[4] := 42;
+            arr3[5] := 69;
+            pretty_print(arr3, 6)
+        )
+    end
+end

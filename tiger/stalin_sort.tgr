@@ -1,0 +1,22 @@
+type int_arr = array of int
+
+function stalin_sort(arr : int_arr, len : int) : int =
+    if len = 0 then
+        0
+    else
+        let
+            var sorted := int_arr[len] of 0
+            var new_len := 1
+        in
+            sorted[0] := arr[0];
+            for i := 1 to len - 1 do
+                if arr[i] >= sorted[new_len - 1] then
+                    (
+                        sorted[new_len] := arr[i];
+                        new_len := new_len + 1
+                    );
+
+            for i := 0 to new_len do
+                arr[i] := sorted[i];
+            new_len
+        end
