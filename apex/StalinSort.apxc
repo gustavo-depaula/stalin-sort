@@ -1,0 +1,18 @@
+public class StalinSort {
+    
+    public static List<Integer> stalinSort(List<Integer> intList) {
+        if (intList.isEmpty()) {
+            return new List<Integer>();
+        }
+
+        List<Integer> sortedList = new List<Integer>();
+        Integer max = null;
+        for (Integer candidate : intList) {
+            if (sortedList.isEmpty() || candidate >= max) {
+                sortedList.add(candidate);
+                max = candidate;
+            }
+        }
+        return sortedList;
+    }
+}
